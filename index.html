@@ -1819,6 +1819,28 @@ html&gt;body{padding:0}&lt;/style&gt;
     @media(max-width:610px){#haberling-dispo-concept .hb-board{grid-template-columns:1fr}#haberling-dispo-concept .hb-orders{grid-row:1}#haberling-dispo-concept .hb-main{padding:10px}#haberling-dispo-concept .hb-date{margin-left:0}#haberling-dispo-concept .hb-caption{display:none}#haberling-dispo-concept table{min-width:470px}#haberling-dispo-concept .hb-resource{padding:9px 12px}#haberling-dispo-concept .hb-heading{gap:6px}}
     @media(pointer:coarse){#haberling-dispo-concept button{min-height:44px}#haberling-dispo-concept .hb-chip button{min-width:34px}#haberling-dispo-concept .hb-resource-action{min-width:44px}}
     #haberling-dispo-concept .hb-status.hb-overbooked{background:light-dark(#d100b8,#ff4fde);color:light-dark(#ffffff,#24001f);font-weight:700}#haberling-dispo-concept .hb-over-count{color:light-dark(#b0009b,#ff82e6)}
+
+    #haberling-dispo-concept .hb-board{grid-template-columns:215px minmax(0,1fr) 320px}
+    #haberling-dispo-concept .hb-details-column{min-width:0}
+    #haberling-dispo-concept .hb-details-heading{margin:0 0 9px;padding:6px 0;font-size:14px;font-weight:700;line-height:1.45}
+    #haberling-dispo-concept .hb-details-column .hb-detail{margin-top:0}
+    #haberling-dispo-concept .hb-details-column .hb-detail-title{overflow-wrap:anywhere}
+    #haberling-dispo-concept .hb-orders table{min-width:440px}
+    @media(max-width:1250px){
+      #haberling-dispo-concept .hb-shell{grid-template-columns:1fr}
+      #haberling-dispo-concept .hb-nav{display:none}
+      #haberling-dispo-concept .hb-board{grid-template-columns:190px minmax(0,1fr) 280px}
+    }
+    @media(max-width:1000px){
+      #haberling-dispo-concept .hb-board{grid-template-columns:190px minmax(0,1fr)}
+      #haberling-dispo-concept .hb-details-column{grid-column:2}
+    }
+    @media(max-width:760px){
+      #haberling-dispo-concept .hb-board{grid-template-columns:minmax(0,1fr)}
+      #haberling-dispo-concept .hb-orders{grid-column:1;grid-row:1}
+      #haberling-dispo-concept .hb-details-column{grid-column:1;grid-row:2}
+      #haberling-dispo-concept .hb-board&gt;section[aria-label=&quot;Ressourcen zuordnen&quot;]{grid-column:1;grid-row:3}
+    }
   &lt;/style&gt;
   &lt;div class=&quot;hb-top&quot;&gt;&lt;span class=&quot;hb-brand&quot;&gt;Haberling&lt;/span&gt;&lt;span class=&quot;hb-caption&quot;&gt;Kapazitätsverwaltung&lt;/span&gt;&lt;span class=&quot;hb-example&quot;&gt;Entwurf · Beispieldaten&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;hb-shell&quot;&gt;
@@ -1837,9 +1859,12 @@ html&gt;body{padding:0}&lt;/style&gt;
           &lt;form id=&quot;hb-new-form&quot; class=&quot;hb-new-form&quot; hidden aria-label=&quot;Freien Auftrag hinzufügen&quot;&gt;&lt;h3&gt;Freien Auftrag hinzufügen&lt;/h3&gt;&lt;label class=&quot;hb-form-name&quot;&gt;&lt;span&gt;Name des Auftrags&lt;/span&gt;&lt;input id=&quot;hb-new-name&quot; type=&quot;text&quot; maxlength=&quot;100&quot; required placeholder=&quot;z. B. Lagerarbeiten oder kurzfristiger Umzug&quot;&gt;&lt;/label&gt;&lt;div class=&quot;hb-form-times&quot;&gt;&lt;label&gt;&lt;span&gt;Beginn (optional)&lt;/span&gt;&lt;input id=&quot;hb-new-start&quot; type=&quot;time&quot;&gt;&lt;/label&gt;&lt;label&gt;&lt;span&gt;Ende (optional)&lt;/span&gt;&lt;input id=&quot;hb-new-end&quot; type=&quot;time&quot;&gt;&lt;/label&gt;&lt;/div&gt;&lt;div id=&quot;hb-form-error&quot; class=&quot;hb-form-error&quot; role=&quot;alert&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hb-form-actions&quot;&gt;&lt;button type=&quot;submit&quot; class=&quot;hb-create-button&quot;&gt;Auftrag anlegen&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;hb-filter&quot; data-new-order=&quot;cancel&quot;&gt;Abbrechen&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;
           &lt;div class=&quot;hb-drag-caption&quot;&gt;Mitarbeiter oder Fahrzeug greifen und auf den Zielauftrag ziehen.&lt;/div&gt;
           &lt;div class=&quot;hb-panel hb-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Auftrag / Zeit&lt;/th&gt;&lt;th&gt;Personal&lt;br&gt;zugeordnet / Bedarf&lt;/th&gt;&lt;th&gt;Fahrzeuge&lt;br&gt;zugeordnet / Bedarf&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;hb-order-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+        &lt;/section&gt;
+        &lt;aside class=&quot;hb-details-column&quot; aria-labelledby=&quot;hb-details-heading&quot;&gt;
+          &lt;h3 id=&quot;hb-details-heading&quot; class=&quot;hb-details-heading&quot;&gt;Auftragsdetails&lt;/h3&gt;
           &lt;section id=&quot;hb-detail&quot; class=&quot;hb-panel hb-detail&quot; aria-label=&quot;Zuordnung zum ausgewählten Auftrag&quot;&gt;&lt;/section&gt;
           &lt;div id=&quot;hb-notice&quot; class=&quot;hb-notice&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
-        &lt;/section&gt;
+        &lt;/aside&gt;
       &lt;/div&gt;
     &lt;/main&gt;
   &lt;/div&gt;
