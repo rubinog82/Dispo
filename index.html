@@ -8,7 +8,7 @@
 <title>Haberling – Disposition Testversion 2</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
-</head>
+<style id="hb-independent-scroll-host">html,body{height:100%;height:100dvh;min-height:0;margin:0;padding:0;overflow:hidden}#codex-visualization{display:block;width:100%;height:100vh!important;height:100dvh!important;min-height:0;border:0}</style></head>
 <body>
 <iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Haberling – Disposition Testversion 2" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
@@ -1869,6 +1869,44 @@ html&gt;body{padding:0}&lt;/style&gt;
     #haberling-dispo-concept .hb-board{grid-template-columns:350px minmax(0,1fr) 300px}#haberling-dispo-concept .hb-resource-search{padding:10px 10px 0}#haberling-dispo-concept .hb-resource-search label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}#haberling-dispo-concept .hb-resource-search input{width:100%;min-width:0;padding:8px 9px;border:1px solid var(--hb-line);border-radius:4px;background:var(--hb-panel);color:var(--hb-ink)}#haberling-dispo-concept #hb-resource-count{display:block;font-size:11px;color:var(--hb-muted);margin-top:5px}#haberling-dispo-concept #hb-resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:9px}#haberling-dispo-concept #hb-resources .hb-resource{min-width:0;padding:8px;border:1px solid var(--hb-line);border-radius:4px;flex-direction:column;align-items:stretch;justify-content:space-between;gap:8px}#haberling-dispo-concept #hb-resources .hb-resource-info{min-height:65px}#haberling-dispo-concept #hb-resources .hb-resource-meta,#haberling-dispo-concept #hb-resources .hb-state{overflow-wrap:anywhere}#haberling-dispo-concept #hb-resources .hb-resource-actions{flex-direction:row;flex-wrap:wrap;gap:5px}#haberling-dispo-concept #hb-resources .hb-status-button{flex:1}#haberling-dispo-concept .hb-resource-empty{grid-column:1/-1;padding:12px;color:var(--hb-muted);font-size:12px}@media(max-width:1250px){#haberling-dispo-concept .hb-board{grid-template-columns:320px minmax(0,1fr) 260px}}@media(max-width:1000px){#haberling-dispo-concept .hb-board{grid-template-columns:320px minmax(0,1fr)}}@media(max-width:760px){#haberling-dispo-concept .hb-board{grid-template-columns:minmax(0,1fr)}}
     #haberling-dispo-concept #hb-resources.hb-personnel-layout{grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start;gap:9px}#haberling-dispo-concept .hb-permanent-resources,#haberling-dispo-concept .hb-temporary-resources{min-width:0}#haberling-dispo-concept .hb-permanent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}#haberling-dispo-concept .hb-temporary-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}#haberling-dispo-concept .hb-temporary-resources{border-left:1px solid var(--hb-line);padding-left:8px}#haberling-dispo-concept #hb-resources h4{margin:0 0 8px;font-size:12px;font-weight:700;line-height:1.4}#haberling-dispo-concept .hb-board:has(.hb-personnel-layout){grid-template-columns:490px minmax(0,1fr) 300px}@media(max-width:1250px){#haberling-dispo-concept .hb-board:has(.hb-personnel-layout){grid-template-columns:450px minmax(0,1fr) 260px}}@media(max-width:1000px){#haberling-dispo-concept .hb-board:has(.hb-personnel-layout){grid-template-columns:440px minmax(0,1fr)}}@media(max-width:760px){#haberling-dispo-concept .hb-board:has(.hb-personnel-layout){grid-template-columns:minmax(0,1fr)}}
     #haberling-dispo-concept .hb-tone-staff{--hb-tile-bg:light-dark(#fff0f0,#432a30);--hb-tile-border:light-dark(#eabfc0,#80505a)}#haberling-dispo-concept .hb-tone-temp{--hb-tile-bg:light-dark(#fff8db,#454025);--hb-tile-border:light-dark(#e4d38f,#827647)}#haberling-dispo-concept .hb-tone-vehicle{--hb-tile-bg:light-dark(#eaf3ff,#263b52);--hb-tile-border:light-dark(#b7d0ee,#4c7199)}#haberling-dispo-concept #hb-resources .hb-resource:is(.hb-tone-staff,.hb-tone-temp,.hb-tone-vehicle),#haberling-dispo-concept .hb-person-token:is(.hb-tone-staff,.hb-tone-temp,.hb-tone-vehicle),#haberling-dispo-concept .hb-chip:is(.hb-tone-staff,.hb-tone-temp,.hb-tone-vehicle){background:var(--hb-tile-bg);border-color:var(--hb-tile-border);color:var(--hb-ink)}
+
+    /* Independent scroll containers; headers remain visible. */
+    html,body{height:100%;height:100dvh;min-height:0;margin:0;overflow:hidden;box-sizing:border-box}
+    body{padding:8px}
+    #haberling-dispo-concept{height:100%;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr)}
+    #haberling-dispo-concept .hb-shell{min-height:0;overflow:hidden}
+    #haberling-dispo-concept .hb-nav{min-height:0;overflow:auto;overscroll-behavior:contain}
+    #haberling-dispo-concept .hb-main{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+    #haberling-dispo-concept .hb-heading{flex:0 0 auto}
+    #haberling-dispo-concept .hb-board{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1fr);align-items:stretch;overflow:hidden}
+    #haberling-dispo-concept [data-return-personnel]{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+    #haberling-dispo-concept [data-return-personnel]&gt;.hb-panel-head,#haberling-dispo-concept .hb-resource-search,#haberling-dispo-concept .hb-resource-tabs,#haberling-dispo-concept .hb-temp-toolbar,#haberling-dispo-concept .hb-period,#haberling-dispo-concept .hb-footer{flex:0 0 auto}
+    #haberling-dispo-concept #hb-resources{flex:1 1 0;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;align-content:start}
+    #haberling-dispo-concept .hb-orders{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+    #haberling-dispo-concept .hb-toolbar,#haberling-dispo-concept .hb-drag-caption{flex:0 0 auto}
+    #haberling-dispo-concept .hb-new-form{flex:0 1 auto;min-height:0;max-height:45%;overflow:auto;overscroll-behavior:contain}
+    #haberling-dispo-concept .hb-table-wrap{flex:1 1 0;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+    #haberling-dispo-concept .hb-table-wrap th{position:sticky;top:0;z-index:2}
+    #haberling-dispo-concept .hb-details-column{display:flex;flex-direction:column;position:static;min-height:0;overflow:hidden}
+    #haberling-dispo-concept .hb-details-heading,#haberling-dispo-concept .hb-notice{flex:0 0 auto}
+    #haberling-dispo-concept .hb-details-column .hb-detail{flex:1 1 0;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+    @media(max-width:1000px) and (min-width:761px){
+      #haberling-dispo-concept .hb-board{grid-template-rows:minmax(0,2fr) minmax(0,1fr)}
+      #haberling-dispo-concept [data-return-personnel]{grid-column:1;grid-row:1 / 3}
+      #haberling-dispo-concept .hb-orders{grid-column:2;grid-row:1}
+      #haberling-dispo-concept .hb-details-column{grid-column:2;grid-row:2}
+    }
+    @media(max-width:760px){
+      #haberling-dispo-concept .hb-main{padding:8px}
+      #haberling-dispo-concept .hb-board{grid-template-rows:minmax(0,1.3fr) minmax(0,1.5fr) minmax(0,1fr);gap:8px}
+      #haberling-dispo-concept .hb-board&gt;section[aria-label=&quot;Ressourcen zuordnen&quot;]{grid-column:1;grid-row:1}
+      #haberling-dispo-concept .hb-orders{grid-column:1;grid-row:2}
+      #haberling-dispo-concept .hb-details-column{grid-column:1;grid-row:3}
+      #haberling-dispo-concept .hb-resource-search{padding-top:5px}
+      #haberling-dispo-concept .hb-resource-search label,#haberling-dispo-concept .hb-period,#haberling-dispo-concept .hb-footer{display:none}
+      #haberling-dispo-concept .hb-resource-tabs{padding:5px 9px}
+      #haberling-dispo-concept [data-return-personnel]&gt;.hb-panel-head{padding:5px 10px}
+    }
   &lt;/style&gt;
   &lt;div class=&quot;hb-top&quot;&gt;&lt;span class=&quot;hb-brand&quot;&gt;Haberling&lt;/span&gt;&lt;span class=&quot;hb-caption&quot;&gt;Kapazitätsverwaltung&lt;/span&gt;&lt;span class=&quot;hb-example&quot;&gt;Entwurf · Fiktive Kunden und Adressen&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;hb-shell&quot;&gt;
