@@ -1841,6 +1841,26 @@ html&gt;body{padding:0}&lt;/style&gt;
       #haberling-dispo-concept .hb-details-column{grid-column:1;grid-row:2}
       #haberling-dispo-concept .hb-board&gt;section[aria-label=&quot;Ressourcen zuordnen&quot;]{grid-column:1;grid-row:3}
     }
+
+    #haberling-dispo-concept tr[data-drop-order] td{cursor:pointer}
+    #haberling-dispo-concept tr[data-drop-order]:not(.hb-selected):hover td{background:var(--hb-soft)}
+    #haberling-dispo-concept .hb-resource-actions{display:flex;flex-direction:column;align-items:stretch;gap:5px;flex-shrink:0}
+    #haberling-dispo-concept .hb-status-button{border:1px solid var(--hb-line);border-radius:4px;padding:4px 6px;background:var(--hb-panel);color:var(--hb-blue);font:inherit;font-size:11px;min-height:28px}
+    #haberling-dispo-concept .hb-status-button.hb-has-block{border-color:var(--hb-red);color:var(--hb-red)}
+    #haberling-dispo-concept .hb-state.hb-blocked{color:var(--hb-red)}
+    #haberling-dispo-concept .hb-resource-dialog{box-sizing:border-box;width:calc(100% - 28px);max-width:440px;max-height:calc(100% - 32px);padding:20px;border:1px solid var(--hb-line);border-radius:8px;background:var(--hb-panel);color:var(--hb-ink);font:inherit;overflow:auto}
+    #haberling-dispo-concept .hb-resource-dialog::backdrop{background:light-dark(rgb(18 27 40 / .38),rgb(0 0 0 / .65))}
+    #haberling-dispo-concept .hb-resource-dialog h3{margin:0 0 15px;font-size:17px;line-height:1.4}
+    #haberling-dispo-concept .hb-status-toggle{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+    #haberling-dispo-concept .hb-status-toggle input{width:18px;height:18px;accent-color:var(--hb-blue)}
+    #haberling-dispo-concept .hb-status-field{display:block;margin-bottom:12px;min-width:0}
+    #haberling-dispo-concept .hb-status-field span{display:block;margin-bottom:5px}
+    #haberling-dispo-concept .hb-status-field input,#haberling-dispo-concept .hb-status-field select{box-sizing:border-box;width:100%;min-width:0;padding:8px;border:1px solid var(--hb-line);border-radius:4px;background:var(--hb-panel);color:var(--hb-ink);font:inherit}
+    #haberling-dispo-concept .hb-status-dates{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+    #haberling-dispo-concept .hb-status-dates[hidden],#haberling-dispo-concept .hb-status-duration[hidden]{display:none}
+    #haberling-dispo-concept .hb-status-duration{color:var(--hb-muted);font-size:12px;margin:0 0 14px}
+    @media(pointer:coarse){#haberling-dispo-concept .hb-status-button{min-height:44px}#haberling-dispo-concept .hb-status-field input,#haberling-dispo-concept .hb-status-field select{font-size:16px}}
+    @media(max-width:380px){#haberling-dispo-concept .hb-status-dates{grid-template-columns:1fr}}
   &lt;/style&gt;
   &lt;div class=&quot;hb-top&quot;&gt;&lt;span class=&quot;hb-brand&quot;&gt;Haberling&lt;/span&gt;&lt;span class=&quot;hb-caption&quot;&gt;Kapazitätsverwaltung&lt;/span&gt;&lt;span class=&quot;hb-example&quot;&gt;Entwurf · Beispieldaten&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;hb-shell&quot;&gt;
@@ -1868,6 +1888,20 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;/div&gt;
     &lt;/main&gt;
   &lt;/div&gt;
+  &lt;dialog id=&quot;hb-resource-dialog&quot; class=&quot;hb-resource-dialog&quot; aria-labelledby=&quot;hb-status-title&quot;&gt;
+    &lt;form id=&quot;hb-status-form&quot;&gt;
+      &lt;h3 id=&quot;hb-status-title&quot;&gt;Status verwalten&lt;/h3&gt;
+      &lt;label class=&quot;hb-status-toggle&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;hb-status-active&quot;&gt;&lt;span id=&quot;hb-status-active-label&quot;&gt;Abwesenheit aktiv&lt;/span&gt;&lt;/label&gt;
+      &lt;label class=&quot;hb-status-field&quot;&gt;&lt;span&gt;Grund&lt;/span&gt;&lt;select id=&quot;hb-status-reason&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+      &lt;div id=&quot;hb-status-dates&quot; class=&quot;hb-status-dates&quot;&gt;
+        &lt;label class=&quot;hb-status-field&quot;&gt;&lt;span&gt;Von&lt;/span&gt;&lt;input id=&quot;hb-status-from&quot; type=&quot;date&quot; min=&quot;1900-01-01&quot; max=&quot;2100-12-31&quot;&gt;&lt;/label&gt;
+        &lt;label class=&quot;hb-status-field&quot;&gt;&lt;span&gt;Bis einschließlich&lt;/span&gt;&lt;input id=&quot;hb-status-to&quot; type=&quot;date&quot; min=&quot;1900-01-01&quot; max=&quot;2100-12-31&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;p id=&quot;hb-status-duration&quot; class=&quot;hb-status-duration&quot; hidden&gt;Bleibt aktiv, bis du den Haken entfernst und speicherst.&lt;/p&gt;
+      &lt;div id=&quot;hb-status-error&quot; class=&quot;hb-form-error&quot; role=&quot;alert&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;hb-form-actions&quot;&gt;&lt;button type=&quot;submit&quot; class=&quot;hb-create-button&quot;&gt;Status speichern&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;hb-filter&quot; data-close-status=&quot;true&quot;&gt;Abbrechen&lt;/button&gt;&lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/dialog&gt;
   &lt;script&gt;
   (()=&gt;{
     const root=document.getElementById(&#x27;haberling-dispo-concept&#x27;);
@@ -1879,13 +1913,13 @@ html&gt;body{padding:0}&lt;/style&gt;
       {id:&#x27;weber&#x27;,name:&#x27;Weber&#x27;,skills:[&#x27;Umzugshelfer&#x27;]},
       {id:&#x27;fischer&#x27;,name:&#x27;Fischer&#x27;,skills:[&#x27;Fahrer B&#x27;]},
       {id:&#x27;becker&#x27;,name:&#x27;Becker&#x27;,skills:[&#x27;Umzugshelfer&#x27;]},
-      {id:&#x27;hoffmann&#x27;,name:&#x27;Hoffmann&#x27;,skills:[&#x27;Fahrer CE&#x27;,&#x27;Fahrer B&#x27;],absence:&#x27;Urlaub&#x27;}
+      {id:&#x27;hoffmann&#x27;,name:&#x27;Hoffmann&#x27;,skills:[&#x27;Fahrer CE&#x27;,&#x27;Fahrer B&#x27;]}
     ];
     const vehicles=[
       {id:&#x27;19-3&#x27;,name:&#x27;19-3&#x27;,type:&#x27;LKW 18 t&#x27;},
       {id:&#x27;20-2&#x27;,name:&#x27;20-2&#x27;,type:&#x27;3,5-t-Koffer&#x27;},
       {id:&#x27;22-4&#x27;,name:&#x27;22-4&#x27;,type:&#x27;3,5-t-Koffer&#x27;},
-      {id:&#x27;23-3&#x27;,name:&#x27;23-3&#x27;,type:&#x27;LKW 18 t&#x27;,absence:&#x27;Werkstatt&#x27;},
+      {id:&#x27;23-3&#x27;,name:&#x27;23-3&#x27;,type:&#x27;LKW 18 t&#x27;},
       {id:&#x27;stapler35&#x27;,name:&#x27;Stapler 3,5 t&#x27;,type:&#x27;Stapler 3,5 t&#x27;}
     ];
     let orders=[
@@ -1926,6 +1960,71 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     function shiftDay(amount){const date=new Date(activeDay+&#x27;T12:00:00Z&#x27;);date.setUTCDate(date.getUTCDate()+amount);changeDay(date.toISOString().slice(0,10));}
     function orderStatus(o){return o.free?&#x27;Freier Auftrag&#x27;:overbooked(o)?&#x27;Überbucht&#x27;:complete(o)?&#x27;Vollständig&#x27;:o.people.length||o.vehicles.length?&#x27;Teilweise&#x27;:&#x27;Offen&#x27;;}
+    const statusDefaults={people:{hoffmann:{reason:&#x27;Urlaub&#x27;,start:&#x27;2026-11-13&#x27;,end:&#x27;2026-11-15&#x27;}},vehicles:{&#x27;23-3&#x27;:{reason:&#x27;Werkstatt&#x27;,start:&#x27;2026-11-13&#x27;,end:&#x27;2026-11-14&#x27;}}};
+    let statusEditor=null;
+    const allowedReasons=k=&gt;k===&#x27;people&#x27;?[&#x27;Urlaub&#x27;,&#x27;Krankheit&#x27;]:[&#x27;Werkstatt&#x27;,&#x27;Defekt&#x27;];
+    const validDate=value=&gt;typeof value===&#x27;string&#x27;&amp;&amp;/^\d{4}-\d{2}-\d{2}$/.test(value)&amp;&amp;value&gt;=&#x27;1900-01-01&#x27;&amp;&amp;value&lt;=&#x27;2100-12-31&#x27;&amp;&amp;!Number.isNaN(new Date(value+&#x27;T12:00:00Z&#x27;).getTime())&amp;&amp;new Date(value+&#x27;T12:00:00Z&#x27;).toISOString().slice(0,10)===value;
+    function readResourceStatuses(){
+      let stored=null;
+      try{stored=globalThis.openai?.widgetState?.privateContent?.haberlingResourceStatuses??null;}catch{}
+      if(stored===null){try{const raw=globalThis.localStorage?.getItem(&#x27;haberling-dispo-resource-status-v1&#x27;);if(raw)stored=JSON.parse(raw);}catch{}}
+      if(!stored||typeof stored!==&#x27;object&#x27;)stored=statusDefaults;
+      const clean={people:{},vehicles:{}};
+      for(const k of [&#x27;people&#x27;,&#x27;vehicles&#x27;])for(const r of k===&#x27;people&#x27;?people:vehicles){
+        const record=stored[k]?.[r.id];
+        if(!record||!allowedReasons(k).includes(record.reason))continue;
+        if(record.reason===&#x27;Defekt&#x27;)clean[k][r.id]={reason:&#x27;Defekt&#x27;,start:null,end:null};
+        else if(validDate(record.start)&amp;&amp;validDate(record.end)&amp;&amp;record.end&gt;=record.start)clean[k][r.id]={reason:record.reason,start:record.start,end:record.end};
+      }
+      return clean;
+    }
+    const resourceStatuses=readResourceStatuses();
+    function activeResourceStatus(k,id,day=activeDay){const status=resourceStatuses[k]?.[id];return status&amp;&amp;(status.reason===&#x27;Defekt&#x27;||status.start&lt;=day&amp;&amp;day&lt;=status.end)?status:null;}
+    const statusDate=value=&gt;value.split(&#x27;-&#x27;).reverse().join(&#x27;.&#x27;);
+    const statusText=status=&gt;status.reason===&#x27;Defekt&#x27;?&#x27;Defekt · bis zur Freigabe&#x27;:status.reason+&#x27; · &#x27;+statusDate(status.start)+&#x27; – &#x27;+statusDate(status.end);
+    async function persistResourceStatuses(){
+      const snapshot=JSON.parse(JSON.stringify(resourceStatuses));
+      try{
+        if(globalThis.openai?.setWidgetState&amp;&amp;globalThis.openai.statePersistence!==&#x27;none&#x27;){
+          const previous=globalThis.openai.widgetState||{};
+          await globalThis.openai.setWidgetState({...previous,privateContent:{...(previous.privateContent||{}),haberlingResourceStatuses:snapshot}});return true;
+        }
+      }catch{}
+      try{if(globalThis.localStorage){globalThis.localStorage.setItem(&#x27;haberling-dispo-resource-status-v1&#x27;,JSON.stringify(snapshot));return true;}}catch{}
+      return false;
+    }
+    function syncStatusFields(){
+      const indefinite=$(&#x27;#hb-status-reason&#x27;).value===&#x27;Defekt&#x27;,enabled=$(&#x27;#hb-status-active&#x27;).checked;
+      $(&#x27;#hb-status-dates&#x27;).hidden=indefinite;$(&#x27;#hb-status-duration&#x27;).hidden=!indefinite;
+      for(const selector of [&#x27;#hb-status-from&#x27;,&#x27;#hb-status-to&#x27;]){$(selector).required=enabled&amp;&amp;!indefinite;$(selector).disabled=!enabled||indefinite;}
+    }
+    function openResourceStatus(id,k){
+      const resource=(k===&#x27;people&#x27;?people:vehicles).find(r=&gt;r.id===id);if(!resource)return;
+      clearMove();statusEditor={id,kind:k};
+      const record=resourceStatuses[k][id];
+      $(&#x27;#hb-status-title&#x27;).textContent=resource.name+&#x27; · &#x27;+(k===&#x27;people&#x27;?&#x27;Abwesenheit&#x27;:&#x27;Fahrzeugstatus&#x27;);
+      $(&#x27;#hb-status-active-label&#x27;).textContent=k===&#x27;people&#x27;?&#x27;Abwesenheit aktiv&#x27;:&#x27;Fahrzeug gesperrt&#x27;;
+      $(&#x27;#hb-status-reason&#x27;).innerHTML=allowedReasons(k).map(reason=&gt;&#x27;&lt;option value=&quot;&#x27;+reason+&#x27;&quot;&gt;&#x27;+reason+&#x27;&lt;/option&gt;&#x27;).join(&#x27;&#x27;);
+      $(&#x27;#hb-status-reason&#x27;).value=record?.reason||allowedReasons(k)[0];
+      $(&#x27;#hb-status-active&#x27;).checked=!!record;
+      $(&#x27;#hb-status-from&#x27;).value=record?.start||activeDay;$(&#x27;#hb-status-to&#x27;).value=record?.end||activeDay;
+      $(&#x27;#hb-status-error&#x27;).textContent=&#x27;&#x27;;syncStatusFields();$(&#x27;#hb-resource-dialog&#x27;).showModal();
+    }
+    async function saveResourceStatus(event){
+      event.preventDefault();if(!statusEditor)return;
+      const {id,kind:k}=statusEditor,enabled=$(&#x27;#hb-status-active&#x27;).checked,reason=$(&#x27;#hb-status-reason&#x27;).value;
+      const start=$(&#x27;#hb-status-from&#x27;).value,end=$(&#x27;#hb-status-to&#x27;).value;
+      $(&#x27;#hb-status-error&#x27;).textContent=&#x27;&#x27;;
+      if(enabled&amp;&amp;!allowedReasons(k).includes(reason)){$(&#x27;#hb-status-error&#x27;).textContent=&#x27;Bitte einen gültigen Grund auswählen.&#x27;;return;}
+      if(enabled&amp;&amp;reason!==&#x27;Defekt&#x27;&amp;&amp;(!validDate(start)||!validDate(end)||end&lt;start)){$(&#x27;#hb-status-error&#x27;).textContent=&#x27;Bitte einen gültigen Zeitraum angeben. Das Enddatum darf nicht vor dem Startdatum liegen.&#x27;;return;}
+      if(enabled)resourceStatuses[k][id]={reason,start:reason===&#x27;Defekt&#x27;?null:start,end:reason===&#x27;Defekt&#x27;?null:end};else delete resourceStatuses[k][id];
+      const name=(k===&#x27;people&#x27;?people:vehicles).find(r=&gt;r.id===id).name;
+      $(&#x27;#hb-resource-dialog&#x27;).close();statusEditor=null;render();
+      $(&#x27;#hb-notice&#x27;).textContent=enabled?name+&#x27;: &#x27;+statusText(resourceStatuses[k][id])+&#x27;.&#x27;:name+&#x27;: Status aufgehoben.&#x27;;
+      const saved=await persistResourceStatuses();
+      if(!saved)$(&#x27;#hb-notice&#x27;).textContent+=&#x27; Dauerhaftes Speichern im Browser ist nicht verfügbar; Status gilt nur in diesem Tab.&#x27;;
+    }
+
     function personToken(id,orderId){const person=people.find(p=&gt;p.id===id);return &#x27;&lt;button type=&quot;button&quot; class=&quot;hb-person-token&quot; draggable=&quot;true&quot; data-drag-person=&quot;&#x27;+id+&#x27;&quot; data-source-order=&quot;&#x27;+orderId+&#x27;&quot; aria-label=&quot;&#x27;+person.name+&#x27; von Auftrag &#x27;+orderId+&#x27; verschieben&quot; aria-describedby=&quot;hb-notice&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;↕&lt;/span&gt;&#x27;+person.name+&#x27;&lt;/button&gt;&#x27;;}
     function vehicleToken(id,orderId){const vehicle=vehicles.find(v=&gt;v.id===id);return &#x27;&lt;button type=&quot;button&quot; class=&quot;hb-person-token&quot; draggable=&quot;true&quot; data-drag-vehicle=&quot;&#x27;+id+&#x27;&quot; data-source-order=&quot;&#x27;+orderId+&#x27;&quot; aria-label=&quot;&#x27;+vehicle.name+&#x27; von Auftrag &#x27;+orderId+&#x27; verschieben&quot; aria-describedby=&quot;hb-notice&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;↕&lt;/span&gt;&#x27;+vehicle.name+&#x27;&lt;/button&gt;&#x27;;}
     function chip(label,id,k){return &#x27;&lt;span class=&quot;hb-chip&quot;&gt;&#x27;+(k===&#x27;people&#x27;?personToken(id,selected):vehicleToken(id,selected))+&#x27;&lt;button type=&quot;button&quot; data-remove=&quot;&#x27;+id+&#x27;&quot; data-resource-kind=&quot;&#x27;+k+&#x27;&quot; aria-label=&quot;&#x27;+label+&#x27; entfernen&quot;&gt;×&lt;/button&gt;&lt;/span&gt;&#x27;;}
@@ -1938,6 +2037,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       if(!source||!target||!resource||!(k===&#x27;vehicles&#x27;?source.vehicles.includes(resource.id):source.people.some(p=&gt;p.id===resource.id)))return {error:&#x27;Zuordnung nicht gefunden.&#x27;};
       if(source===target)return {error:&#x27;Ressource ist diesem Auftrag bereits zugeordnet.&#x27;};
       const existing=k===&#x27;vehicles&#x27;?target.vehicles.includes(resource.id):target.people.some(p=&gt;p.id===resource.id);
+      const unavailable=activeResourceStatus(k,resource.id);if(!existing&amp;&amp;unavailable)return {error:resource.name+&#x27;: &#x27;+statusText(unavailable)+&#x27;.&#x27;};
       const slot=k===&#x27;vehicles&#x27;?remainingType(resource,target):remainingRole(resource,target);
       if(!existing&amp;&amp;!slot)return {error:k===&#x27;vehicles&#x27;?&#x27;Kein passender freier Fahrzeugbedarf im Zielauftrag.&#x27;:&#x27;Kein passender freier Personalbedarf im Zielauftrag.&#x27;};
       return {source,target,resource,existing,slot,k};
@@ -1965,7 +2065,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       root.querySelectorAll(&#x27;[data-kind]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-selected&#x27;,String(b.dataset.kind===kind)));
       root.querySelectorAll(&#x27;[data-filter]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b.dataset.filter===filter)));
       $(&#x27;#hb-order-rows&#x27;).innerHTML=orders.filter(x=&gt;filter===&#x27;all&#x27;||!complete(x)).map(x=&gt;&#x27;&lt;tr data-drop-order=&quot;&#x27;+x.id+&#x27;&quot; class=&quot;&#x27;+(x.id===selected?&#x27;hb-selected&#x27;:&#x27;&#x27;)+&#x27;&quot;&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;hb-order-pick&quot; data-order=&quot;&#x27;+x.id+&#x27;&quot; aria-pressed=&quot;&#x27;+(x.id===selected)+&#x27;&quot;&gt;&lt;span class=&quot;hb-pos&quot;&gt;&#x27;+x.id+&#x27;&lt;/span&gt;&#x27;+escapeHTML(x.customer)+&#x27;&lt;/button&gt;&lt;span class=&quot;hb-sub&quot;&gt;&#x27;+windowText(x)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;hb-drop-person&quot;&gt;&lt;span class=&quot;hb-number &#x27;+(x.free?&#x27;&#x27;:x.people.length&gt;pNeed(x)?&#x27;hb-over-count&#x27;:personnelCovered(x)?&#x27;hb-ok&#x27;:&#x27;hb-need&#x27;)+&#x27;&quot;&gt;&#x27;+x.people.length+(x.free?&#x27; zugeordnet&#x27;:&#x27; / &#x27;+pNeed(x))+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+x.people.map(p=&gt;personToken(p.id,x.id)).join(&#x27;&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;hb-number &#x27;+(x.free?&#x27;&#x27;:x.vehicles.length&gt;vNeed(x)?&#x27;hb-over-count&#x27;:vehiclesCovered(x)?&#x27;hb-ok&#x27;:&#x27;hb-need&#x27;)+&#x27;&quot;&gt;&#x27;+x.vehicles.length+(x.free?&#x27; zugeordnet&#x27;:&#x27; / &#x27;+vNeed(x))+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+x.vehicles.map(id=&gt;vehicleToken(id,x.id)).join(&#x27;&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;hb-status &#x27;+statusClass(x)+&#x27;&quot;&gt;&#x27;+orderStatus(x)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&#x27;).join(&#x27;&#x27;)||&#x27;&lt;tr&gt;&lt;td colspan=&quot;4&quot;&gt;&#x27;+(orders.length?&#x27;Alle Aufträge sind vollständig besetzt.&#x27;:&#x27;Keine Aufträge für diesen Tag.&#x27;)+&#x27;&lt;/td&gt;&lt;/tr&gt;&#x27;;
-      if(!o){$(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-day-empty&quot;&gt;Über „Freien Auftrag hinzufügen“ einen Auftrag für diesen Tag anlegen.&lt;/div&gt;&#x27;;$(&#x27;#hb-resources&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-day-empty&quot;&gt;Zuerst einen Auftrag anlegen oder auswählen.&lt;/div&gt;&#x27;;return;}
+      if(!o){$(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-day-empty&quot;&gt;Über „Freien Auftrag hinzufügen“ einen Auftrag für diesen Tag anlegen.&lt;/div&gt;&#x27;;renderResources(null);return;}
       const extraPeople=o.people.filter(p=&gt;!o.roles.some(r=&gt;r.type===p.role));
       const extraVehicles=o.vehicles.filter(id=&gt;!o.types.some(t=&gt;t.type===vehicles.find(v=&gt;v.id===id).type));
       $(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-detail-head&quot;&gt;&lt;div class=&quot;hb-detail-title&quot;&gt;&#x27;+o.id+&#x27; · &#x27;+escapeHTML(o.customer)+&#x27;&lt;span class=&quot;hb-sub&quot;&gt;&#x27;+o.task+&#x27; · &#x27;+o.place+&#x27; · &#x27;+windowText(o)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;hb-status &#x27;+statusClass(o)+&#x27;&quot;&gt;&#x27;+(overbooked(o)?&#x27;Überbucht&#x27;:complete(o)?&#x27;Vollständig besetzt&#x27;:&#x27;Zuordnung ergänzen&#x27;)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-detail-body&quot;&gt;&lt;div class=&quot;hb-section-title&quot;&gt;Personalbedarf&lt;/div&gt;&#x27;+o.roles.map(r=&gt;{
@@ -1978,19 +2078,29 @@ html&gt;body{padding:0}&lt;/style&gt;
       if(o.free){
         $(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-detail-head&quot;&gt;&lt;div class=&quot;hb-detail-title&quot;&gt;&#x27;+o.id+&#x27; · &#x27;+escapeHTML(o.customer)+&#x27;&lt;span class=&quot;hb-sub&quot;&gt;Freier Auftrag · &#x27;+windowText(o)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;hb-status&quot;&gt;Freier Auftrag&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-detail-body&quot;&gt;&lt;div class=&quot;hb-section-title&quot;&gt;Zugeordnetes Personal&lt;/div&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+(o.people.map(p=&gt;chip(people.find(x=&gt;x.id===p.id).name,p.id,&#x27;people&#x27;)).join(&#x27;&#x27;)||&#x27;&lt;span class=&quot;hb-sub&quot;&gt;Noch kein Personal zugeordnet.&lt;/span&gt;&#x27;)+&#x27;&lt;/div&gt;&lt;div class=&quot;hb-section-title hb-divider&quot;&gt;Zugeordnete Fahrzeuge und Geräte&lt;/div&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+(o.vehicles.map(id=&gt;chip(vehicles.find(v=&gt;v.id===id).name,id,&#x27;vehicles&#x27;)).join(&#x27;&#x27;)||&#x27;&lt;span class=&quot;hb-sub&quot;&gt;Noch kein Fahrzeug zugeordnet.&lt;/span&gt;&#x27;)+&#x27;&lt;/div&gt;&lt;/div&gt;&#x27;;
       }
+      renderResources(o);
+    }
+    function renderResources(o){
       $(&#x27;#hb-resources&#x27;).innerHTML=(kind===&#x27;people&#x27;?people:vehicles).map(r=&gt;{
-        const chosen=kind===&#x27;people&#x27;?o.people.some(x=&gt;x.id===r.id):o.vehicles.includes(r.id);
-        const busy=conflict(r.id,kind,o);
-        const fits=kind===&#x27;people&#x27;?remainingRole(r,o):remainingType(r,o);
+        const chosen=!!o&amp;&amp;(kind===&#x27;people&#x27;?o.people.some(x=&gt;x.id===r.id):o.vehicles.includes(r.id));
+        const block=activeResourceStatus(kind,r.id),record=resourceStatuses[kind][r.id];
         const alreadyAssigned=orders.some(x=&gt;kind===&#x27;people&#x27;?x.people.some(p=&gt;p.id===r.id):x.vehicles.includes(r.id));
-        let state=chosen?&#x27;Einem Auftrag zugeordnet&#x27;:r.absence?r.absence:alreadyAssigned?&#x27;Einem Auftrag zugeordnet&#x27;:busy?&#x27;Verplant: &#x27;+busy.id+&#x27; · &#x27;+windowText(busy):&#x27;Frei im Einsatzzeitraum&#x27;;
-        const disabled=!chosen&amp;&amp;(!!r.absence||!fits);
-        const unavailable=!chosen&amp;&amp;(!!r.absence);
-        return &#x27;&lt;div class=&quot;hb-resource&quot;&gt;&lt;div class=&quot;hb-resource-info&quot;&gt;&lt;div class=&quot;hb-resource-name&quot;&gt;&#x27;+r.name+&#x27;&lt;/div&gt;&lt;div class=&quot;hb-resource-meta&quot;&gt;&#x27;+(kind===&#x27;people&#x27;?r.skills[0]:r.type)+&#x27;&lt;/div&gt;&lt;span class=&quot;hb-state &#x27;+(unavailable?&#x27;hb-unavailable&#x27;:&#x27;&#x27;)+&#x27;&quot;&gt;&#x27;+state+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;hb-resource-action &#x27;+(chosen?&#x27;hb-chosen&#x27;:&#x27;&#x27;)+&#x27;&quot; data-add=&quot;&#x27;+r.id+&#x27;&quot; &#x27;+(disabled?&#x27;disabled&#x27;:&#x27;&#x27;)+&#x27; aria-label=&quot;&#x27;+r.name+(chosen?&#x27; entfernen&#x27;:&#x27; zuordnen&#x27;)+&#x27;&quot;&gt;&#x27;+(chosen?&#x27;✓&#x27;:&#x27;+&#x27;)+&#x27;&lt;/button&gt;&lt;/div&gt;&#x27;;
+        const state=block?statusText(block):alreadyAssigned?&#x27;Einem Auftrag zugeordnet&#x27;:record&amp;&amp;record.start&gt;activeDay?&#x27;Geplant: &#x27;+statusText(record):&#x27;Frei im Einsatzzeitraum&#x27;;
+        const disabled=!o||!chosen&amp;&amp;!!block;
+        return &#x27;&lt;div class=&quot;hb-resource&quot;&gt;&lt;div class=&quot;hb-resource-info&quot;&gt;&lt;div class=&quot;hb-resource-name&quot;&gt;&#x27;+r.name+&#x27;&lt;/div&gt;&lt;div class=&quot;hb-resource-meta&quot;&gt;&#x27;+(kind===&#x27;people&#x27;?r.skills[0]:r.type)+&#x27;&lt;/div&gt;&lt;span class=&quot;hb-state &#x27;+(block?&#x27;hb-blocked&#x27;:&#x27;&#x27;)+&#x27;&quot;&gt;&#x27;+state+&#x27;&lt;/span&gt;&#x27;+(block&amp;&amp;alreadyAssigned?&#x27;&lt;span class=&quot;hb-resource-meta&quot;&gt;Einem Auftrag zugeordnet&lt;/span&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&lt;div class=&quot;hb-resource-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;hb-resource-action &#x27;+(chosen?&#x27;hb-chosen&#x27;:&#x27;&#x27;)+&#x27;&quot; data-add=&quot;&#x27;+r.id+&#x27;&quot; &#x27;+(disabled?&#x27;disabled&#x27;:&#x27;&#x27;)+&#x27; aria-label=&quot;&#x27;+r.name+(chosen?&#x27; entfernen&#x27;:&#x27; zuordnen&#x27;)+&#x27;&quot;&gt;&#x27;+(chosen?&#x27;✓&#x27;:&#x27;+&#x27;)+&#x27;&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;hb-status-button &#x27;+(block?&#x27;hb-has-block&#x27;:&#x27;&#x27;)+&#x27;&quot; data-resource-status=&quot;&#x27;+r.id+&#x27;&quot; data-status-kind=&quot;&#x27;+kind+&#x27;&quot; aria-label=&quot;&#x27;+(kind===&#x27;people&#x27;?&#x27;Abwesenheit von &#x27;:&#x27;Status von &#x27;)+r.name+&#x27; verwalten&quot;&gt;Status&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&#x27;;
       }).join(&#x27;&#x27;);
     }
-    root.addEventListener(&#x27;change&#x27;,e=&gt;{if(e.target.id===&#x27;hb-day&#x27;){if(e.target.value)changeDay(e.target.value);else render();}});
+
+    $(&#x27;#hb-resource-dialog&#x27;).addEventListener(&#x27;close&#x27;,()=&gt;{statusEditor=null;});
+    root.addEventListener(&#x27;change&#x27;,e=&gt;{
+      if(e.target.id===&#x27;hb-day&#x27;){if(e.target.value)changeDay(e.target.value);else render();}
+      else if([&#x27;hb-status-reason&#x27;,&#x27;hb-status-from&#x27;,&#x27;hb-status-to&#x27;,&#x27;hb-status-active&#x27;].includes(e.target.id)){
+        if(e.target.id!==&#x27;hb-status-active&#x27;)$(&#x27;#hb-status-active&#x27;).checked=true;
+        syncStatusFields();$(&#x27;#hb-status-error&#x27;).textContent=&#x27;&#x27;;
+      }
+    });
     root.addEventListener(&#x27;submit&#x27;,e=&gt;{
+      if(e.target.id===&#x27;hb-status-form&#x27;)return saveResourceStatus(e);
       if(e.target.id!==&#x27;hb-new-form&#x27;)return;e.preventDefault();
       const name=$(&#x27;#hb-new-name&#x27;).value.trim().slice(0,100),startText=$(&#x27;#hb-new-start&#x27;).value,endText=$(&#x27;#hb-new-end&#x27;).value;
       const error=$(&#x27;#hb-form-error&#x27;);error.textContent=&#x27;&#x27;;
@@ -2029,6 +2139,8 @@ html&gt;body{padding:0}&lt;/style&gt;
     root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Escape&#x27;&amp;&amp;moving){clearMove();$(&#x27;#hb-notice&#x27;).textContent=&#x27;Verschieben abgebrochen.&#x27;;}});
     root.addEventListener(&#x27;click&#x27;,e=&gt;{
       const action=e.target.closest(&#x27;button&#x27;);
+      if(action?.dataset.resourceStatus){openResourceStatus(action.dataset.resourceStatus,action.dataset.statusKind);return;}
+      if(action?.dataset.closeStatus){$(&#x27;#hb-resource-dialog&#x27;).close();statusEditor=null;return;}
       if(action?.dataset.dayShift){shiftDay(Number(action.dataset.dayShift));return;}
       if(action?.dataset.newOrder){
         clearMove();$(&#x27;#hb-form-error&#x27;).textContent=&#x27;&#x27;;
@@ -2045,7 +2157,12 @@ html&gt;body{padding:0}&lt;/style&gt;
         return;
       }
       if(moving){const row=e.target.closest(&#x27;[data-drop-order]&#x27;);if(row){moveResource(row.dataset.dropOrder);return;}clearMove();}
-      const b=e.target.closest(&#x27;button&#x27;);if(!b)return;
+      const b=e.target.closest(&#x27;button&#x27;);
+      if(!b){
+        const row=e.target.closest(&#x27;[data-drop-order]&#x27;);
+        if(row){selected=row.dataset.dropOrder;$(&#x27;#hb-notice&#x27;).textContent=&#x27;&#x27;;render();}
+        return;
+      }
       if(b.dataset.order){selected=b.dataset.order;$(&#x27;#hb-notice&#x27;).textContent=&#x27;&#x27;;render();return;}
       if(b.dataset.kind){kind=b.dataset.kind;render();return;}
       if(b.dataset.filter){filter=b.dataset.filter;render();return;}
@@ -2056,7 +2173,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         const id=b.dataset.add,r=(kind===&#x27;people&#x27;?people:vehicles).find(x=&gt;x.id===id);
         const exists=kind===&#x27;people&#x27;?o.people.some(x=&gt;x.id===id):o.vehicles.includes(id);
         if(exists){if(kind===&#x27;people&#x27;)o.people=o.people.filter(p=&gt;p.id!==id);else o.vehicles=o.vehicles.filter(v=&gt;v!==id);$(&#x27;#hb-notice&#x27;).textContent=r.name+&#x27; entfernt.&#x27;;render();return;}
-        if(r.absence)return;
+        const unavailable=activeResourceStatus(kind,id);if(unavailable){$(&#x27;#hb-notice&#x27;).textContent=r.name+&#x27;: &#x27;+statusText(unavailable)+&#x27;.&#x27;;return;}
         const slot=kind===&#x27;people&#x27;?remainingRole(r,o):remainingType(r,o);if(!slot)return;
         if(kind===&#x27;people&#x27;)o.people.push({id,role:slot.type});else o.vehicles.push(id);
         $(&#x27;#hb-notice&#x27;).textContent=r.name+&#x27; dem Auftrag &#x27;+o.id+&#x27; zugeordnet.&#x27;;render();
