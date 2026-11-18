@@ -2015,6 +2015,54 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
     #haberling-dispo-concept .hb-legend-free{--hb-legend-color:#199565}#haberling-dispo-concept .hb-legend-single{--hb-legend-color:#2874c9}#haberling-dispo-concept .hb-legend-multiple{--hb-legend-color:#e08b16}#haberling-dispo-concept .hb-legend-unavailable{--hb-legend-color:#8993a2}
     #haberling-dispo-concept .hb-person-token,#haberling-dispo-concept .hb-chip{--hb-tile-bg:#fff;--hb-tile-border:#d2dce8}
     #haberling-dispo-concept .hb-temp-marker{display:inline-block;padding:1px 3px;background:#edf0f4;color:#62738a;border-radius:2px;font-size:8px!important;font-weight:600;opacity:1!important;margin-left:2px}
+
+    #haberling-dispo-concept table{min-width:800px}
+    #haberling-dispo-concept th:first-child{width:23%}#haberling-dispo-concept th:nth-child(2){width:17%}#haberling-dispo-concept th:nth-child(3){width:31%}#haberling-dispo-concept th:nth-child(4){width:18%}#haberling-dispo-concept th:last-child{width:11%}
+    #haberling-dispo-concept .hb-order-staff&gt;.hb-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+    #haberling-dispo-concept .hb-order-staff&gt;.hb-chips&gt;.hb-capacity-extra,#haberling-dispo-concept .hb-order-staff&gt;.hb-chips&gt;.hb-extra-resources{grid-column:1/-1}
+    #haberling-dispo-concept .hb-order-staff .hb-extra-resources&gt;.hb-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+    #haberling-dispo-concept .hb-order-agency&gt;.hb-chips,#haberling-dispo-concept .hb-order-agency .hb-extra-resources&gt;.hb-chips{display:grid;grid-template-columns:minmax(0,1fr);gap:5px}
+    #haberling-dispo-concept .hb-order-agency .hb-capacity-slot,#haberling-dispo-concept .hb-order-vehicles .hb-capacity-slot{width:100%}
+    #haberling-dispo-concept .hb-total-personnel{display:block;font-size:10px;margin:-3px 0 6px}
+    #haberling-dispo-concept .hb-agency-empty{padding:8px 2px;font-size:10px;color:var(--hb-muted);line-height:1.4}
+    #haberling-dispo-concept .hb-work-section&gt;h4{font-size:12px;font-weight:600;margin:0 0 10px}
+    #haberling-dispo-concept .hb-work-duration-label{display:block;font-size:11px;color:#526b84;margin-bottom:5px}
+    #haberling-dispo-concept .hb-work-duration{display:flex;gap:6px;align-items:stretch}
+    #haberling-dispo-concept .hb-work-duration input{min-width:0;width:100%;flex:1}
+    #haberling-dispo-concept .hb-work-duration button{flex:0 0 auto;font-size:10px;padding:5px 7px}
+    #haberling-dispo-concept .hb-work-duration input,#haberling-dispo-concept .hb-person-hours{border:1px solid #cfd9e6;border-radius:4px;background:#f8f9fb;color:#123354;padding:6px 7px;font:inherit;font-size:12px;height:30px}
+    #haberling-dispo-concept .hb-work-note{font-size:10px;color:var(--hb-muted);line-height:1.45;margin:6px 0 12px}
+    #haberling-dispo-concept .hb-work-group{margin-top:13px}
+    #haberling-dispo-concept .hb-work-group&gt;h4{font-size:11px;font-weight:600;margin:0 0 6px}
+    #haberling-dispo-concept .hb-work-row,#haberling-dispo-concept .hb-work-column-head{display:grid;grid-template-columns:minmax(0,1fr) 85px;gap:7px;align-items:center}
+    #haberling-dispo-concept .hb-work-column-head{font-size:9px;color:var(--hb-muted);background:#f6f8fa;padding:6px 4px;border-bottom:1px solid var(--hb-line)}
+    #haberling-dispo-concept .hb-work-row{padding:7px 4px;border-bottom:1px solid var(--hb-line)}
+    #haberling-dispo-concept .hb-work-person .hb-resource-meta{display:block;margin-top:3px}
+    #haberling-dispo-concept .hb-work-person{min-width:0}#haberling-dispo-concept .hb-work-person&gt;.hb-chip{max-width:100%}
+    #haberling-dispo-concept .hb-person-hours{width:100%;text-align:right;font-variant-numeric:tabular-nums}
+    #haberling-dispo-concept .hb-person-hours[aria-invalid=true]{border-color:var(--hb-red)}
+    #haberling-dispo-concept .hb-work-row,#haberling-dispo-concept .hb-work-column-head{grid-template-columns:minmax(0,1fr) 107px}
+    #haberling-dispo-concept .hb-work-input{display:flex;gap:4px;min-width:0}
+    #haberling-dispo-concept .hb-work-input input{min-width:0;flex:1}
+    #haberling-dispo-concept .hb-work-save{border:1px solid #c9d9d1;background:#edf7f0;color:#197447;border-radius:4px;flex:0 0 26px;padding:3px;height:30px;font-size:13px}
+    #haberling-dispo-concept .hb-work-empty,#haberling-dispo-concept .hb-person-demand{font-size:10px;color:var(--hb-muted);line-height:1.6;margin:7px 0}
+    #haberling-dispo-concept .hb-board{grid-template-columns:420px minmax(0,1fr) 330px}
+    @media(max-width:1280px){#haberling-dispo-concept .hb-board{grid-template-columns:390px minmax(0,1fr) 320px}}
+    @media(max-width:1050px){#haberling-dispo-concept .hb-board,#haberling-dispo-concept.hb-details-hidden .hb-board{grid-template-columns:350px minmax(0,1fr)}#haberling-dispo-concept:not(.hb-details-hidden) .hb-details-column{width:330px}}
+    @media(max-width:760px){#haberling-dispo-concept .hb-board,#haberling-dispo-concept.hb-details-hidden .hb-board{grid-template-columns:minmax(0,1fr)}}
+
+#haberling-dispo-concept .hb-work-row,#haberling-dispo-concept .hb-work-column-head{grid-template-columns:minmax(0,1fr) 176px}
+#haberling-dispo-concept .hb-work-input{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 26px;gap:4px}
+#haberling-dispo-concept .hb-person-hours{width:100%;padding:4px 2px;font-size:11px;text-align:left}
+#haberling-dispo-concept .hb-clock-total{grid-column:1/-1;font-size:10px;color:var(--hb-muted);text-align:right}
+#haberling-dispo-concept .hb-work-duration{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+#haberling-dispo-concept .hb-work-duration label{font-size:10px;color:var(--hb-muted)}
+#haberling-dispo-concept .hb-work-duration input{display:block;margin-top:3px}
+#haberling-dispo-concept .hb-work-duration button{grid-column:1/-1}
+#haberling-dispo-concept .hb-board{grid-template-columns:420px minmax(0,1fr) 380px}
+@media(max-width:1280px){#haberling-dispo-concept .hb-board{grid-template-columns:390px minmax(0,1fr) 370px}}
+@media(max-width:1050px){#haberling-dispo-concept .hb-board{grid-template-columns:350px minmax(0,1fr)}#haberling-dispo-concept:not(.hb-details-hidden) .hb-details-column{width:380px}}
+@media(max-width:760px){#haberling-dispo-concept .hb-board{grid-template-columns:minmax(0,1fr)}}
 &lt;/style&gt;
   &lt;div class=&quot;hb-top&quot;&gt;&lt;div class=&quot;hb-brand&quot;&gt;&lt;img src=&quot;data:image/png;base64,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&quot; alt=&quot;Haberling&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hb-top-tools&quot;&gt;&lt;button type=&quot;button&quot; id=&quot;hb-nav-toggle&quot; class=&quot;hb-icon-button&quot; data-toggle-nav=&quot;true&quot; aria-controls=&quot;hb-main-navigation&quot; aria-label=&quot;Navigation ein- oder ausklappen&quot; title=&quot;Navigation ein- oder ausklappen&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 3h18v18H3z M8 3v18&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;&lt;span class=&quot;hb-caption&quot;&gt;Kapazitätsverwaltung&lt;/span&gt;&lt;div class=&quot;hb-top-right&quot;&gt;&lt;span class=&quot;hb-demo&quot;&gt;Vorschau · fiktive Daten&lt;/span&gt;&lt;span&gt;Haberling&amp;nbsp; &lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18 M8 19v-2a4 4 0 0 1 8 0v2 M12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6&quot;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&quot;hb-shell&quot;&gt;&lt;aside id=&quot;hb-main-navigation&quot; class=&quot;hb-nav&quot; aria-label=&quot;Hauptnavigation&quot;&gt;&lt;div class=&quot;hb-nav-item &quot; title=&quot;Dashboard&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Dashboard&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item &quot; title=&quot;ToDo-Liste&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M4 12l5 5L20 5 M20 13v7H3V3h12&quot;/&gt;&lt;/svg&gt;&lt;span&gt;ToDo-Liste&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item &quot; title=&quot;Tourenplanung&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M5 5h8a4 4 0 0 1 0 8H9a4 4 0 0 0 0 8h10 M5 2v6 M19 18v5&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Tourenplanung&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item &quot; title=&quot;Belege&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M6 3h9l4 4v14H6z M14 3v5h5 M9 12h7 M9 16h7&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Belege&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item hb-nav-parent&quot; title=&quot;Kapazitätsverwaltung&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M3 6h11v11H3z M14 10h4l3 4v3h-7 M7 17a2 2 0 1 0 0 .1 M18 17a2 2 0 1 0 0 .1&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Kapazitätsverwaltung&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item hb-active hb-nav-sub&quot; title=&quot;Disposition&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M16 21v-3a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v3 M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8 M22 21v-3a4 4 0 0 0-3-4 M17 3a4 4 0 0 1 0 8&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Disposition&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item &quot; title=&quot;Stammdaten&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20 5c0 4-16 4-16 0s16-4 16 0v14c0 4-16 4-16 0V5 M4 12c0 4 16 4 16 0&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Stammdaten&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-item &quot; title=&quot;Administration&quot;&gt;&lt;svg class=&quot;hb-icon&quot; viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8 M10 2h4l1 4 4 1 3 3-2 3 1 4-3 3-4-1-3 2-3-3 1-4-2-3 3-3 4-1z&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Administration&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-nav-foot&quot;&gt;Disposition · Vorschau&lt;/div&gt;&lt;/aside&gt;
@@ -2034,7 +2082,7 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
           &lt;div class=&quot;hb-toolbar&quot;&gt;&lt;span class=&quot;hb-toolbar-label&quot;&gt;Aufträge&lt;/span&gt;&lt;button type=&quot;button&quot; class=&quot;hb-filter&quot; data-filter=&quot;all&quot; aria-pressed=&quot;true&quot;&gt;Alle&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;hb-filter&quot; data-filter=&quot;open&quot; aria-pressed=&quot;false&quot;&gt;Noch zu besetzen&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;hb-create-button&quot; data-new-order=&quot;open&quot;&gt;+ Freier Auftrag&lt;/button&gt;&lt;/div&gt;
           &lt;form id=&quot;hb-new-form&quot; class=&quot;hb-new-form&quot; hidden aria-label=&quot;Freien Auftrag hinzufügen&quot;&gt;&lt;h3&gt;Freien Auftrag hinzufügen&lt;/h3&gt;&lt;label class=&quot;hb-form-name&quot;&gt;&lt;span&gt;Name des Auftrags&lt;/span&gt;&lt;input id=&quot;hb-new-name&quot; type=&quot;text&quot; maxlength=&quot;100&quot; required placeholder=&quot;z. B. Lagerarbeiten oder kurzfristiger Umzug&quot;&gt;&lt;/label&gt;&lt;div class=&quot;hb-form-times&quot;&gt;&lt;label&gt;&lt;span&gt;Beginn (optional)&lt;/span&gt;&lt;input id=&quot;hb-new-start&quot; type=&quot;time&quot;&gt;&lt;/label&gt;&lt;label&gt;&lt;span&gt;Ende (optional)&lt;/span&gt;&lt;input id=&quot;hb-new-end&quot; type=&quot;time&quot;&gt;&lt;/label&gt;&lt;/div&gt;&lt;div id=&quot;hb-form-error&quot; class=&quot;hb-form-error&quot; role=&quot;alert&quot;&gt;&lt;/div&gt;&lt;div class=&quot;hb-form-actions&quot;&gt;&lt;button id=&quot;hb-new-save&quot; type=&quot;button&quot; class=&quot;hb-create-button&quot;&gt;Auftrag anlegen&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;hb-filter&quot; data-new-order=&quot;cancel&quot;&gt;Abbrechen&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;
           &lt;div class=&quot;hb-drag-caption&quot;&gt;Ressourcen auf die Auftragszeile ziehen – der passende Platz wird automatisch belegt. Zusätzliche Buchungen bleiben möglich.&lt;/div&gt;
-          &lt;div class=&quot;hb-panel hb-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Auftrag / Zeit&lt;/th&gt;&lt;th&gt;Personal&lt;br&gt;zugeordnet / Bedarf&lt;/th&gt;&lt;th&gt;Fahrzeuge&lt;br&gt;zugeordnet / Bedarf&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;hb-order-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+          &lt;div class=&quot;hb-panel hb-table-wrap&quot;&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Auftrag / Zeit&lt;/th&gt;&lt;th&gt;Fahrzeuge&lt;br&gt;zugeordnet / Bedarf&lt;/th&gt;&lt;th&gt;Stammpersonal&lt;/th&gt;&lt;th&gt;Zeitarbeiter&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;hb-order-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
         &lt;/section&gt;
         &lt;aside id=&quot;hb-details-panel&quot; class=&quot;hb-details-column&quot; aria-labelledby=&quot;hb-details-heading&quot;&gt;
           &lt;h3 id=&quot;hb-details-heading&quot; class=&quot;hb-details-heading&quot;&gt;Auftragsdetails&lt;button class=&quot;hb-icon-button hb-detail-close&quot; type=&quot;button&quot; data-toggle-details=&quot;true&quot; aria-label=&quot;Auftragsdetails schließen&quot; title=&quot;Auftragsdetails schließen&quot;&gt;×&lt;/button&gt;&lt;/h3&gt;
@@ -2174,20 +2222,132 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       return clean;
     }
     const resourceStatuses=readResourceStatuses();
+    let privateWriteQueue=Promise.resolve();
+    const privateStorageKeys={haberlingResourceStatuses:&#x27;haberling-dispo-resource-status-v1&#x27;,haberlingTemporaryWorkers:&#x27;haberling-dispo-temporary-workers-v1&#x27;,haberlingWorkingOrdersV1:&#x27;haberling-dispo-working-orders-v1&#x27;};
+    function persistPrivateFields(fields){
+      const snapshot=JSON.parse(JSON.stringify(fields));
+      const write=async()=&gt;{
+        try{
+          if(globalThis.openai?.setWidgetState&amp;&amp;globalThis.openai.statePersistence!==&#x27;none&#x27;){
+            const previous=globalThis.openai.widgetState||{};
+            await globalThis.openai.setWidgetState({...previous,privateContent:{...(previous.privateContent||{}),...snapshot}});return true;
+          }
+        }catch{}
+        try{if(globalThis.localStorage){for(const [key,value] of Object.entries(snapshot))globalThis.localStorage.setItem(privateStorageKeys[key],JSON.stringify(value));return true;}}catch{}
+        return false;
+      };
+      const result=privateWriteQueue.then(write,write);privateWriteQueue=result.then(()=&gt;undefined,()=&gt;undefined);return result;
+    }
+    const validWorkMinutes=n=&gt;n===null||Number.isInteger(n)&amp;&amp;n&gt;=0&amp;&amp;n&lt;=1440;
+    const temporaryPerson=id=&gt;!!people.find(p=&gt;p.id===id)?.temporary;
+    const staffPeople=o=&gt;o.people.filter(p=&gt;!temporaryPerson(p.id));
+    const agencyPeople=o=&gt;o.people.filter(p=&gt;temporaryPerson(p.id));
+    function loadWorkingOrders(){
+      let raw=null;
+      try{raw=globalThis.openai?.widgetState?.privateContent?.haberlingWorkingOrdersV1??null;}catch{}
+      if(raw===null){try{raw=JSON.parse(globalThis.localStorage?.getItem(privateStorageKeys.haberlingWorkingOrdersV1)||&#x27;null&#x27;);}catch{}}
+      const clean={};if(!raw||typeof raw!==&#x27;object&#x27;||Array.isArray(raw))return clean;
+      for(const record of Object.values(raw)){
+        if(!record||!validDate(record.day)||!record.order||typeof record.order!==&#x27;object&#x27;)continue;
+        const saved=record.order,id=saved.id;
+        if(typeof id!==&#x27;string&#x27;||!/^P26-\d{4}$|^F-\d+$/.test(id)||!Array.isArray(saved.people)||!validWorkMinutes(saved.workDurationMinutes??null))continue;
+        const list=dayOrders[record.day]||(dayOrders[record.day]=[]),index=list.findIndex(o=&gt;o.id===id),base=list[index];
+        if(!base&amp;&amp;!(saved.free===true&amp;&amp;/^F-\d+$/.test(id)&amp;&amp;typeof saved.customer===&#x27;string&#x27;))continue;
+        const seen=new Set(),restoredPeople=[];
+        for(const assignment of saved.people){
+          const person=people.find(p=&gt;p.id===assignment?.id);
+          if(!person||seen.has(person.id)||!person.skills.includes(assignment.role))continue;
+          const restored={id:person.id,role:assignment.role};
+          if(Object.prototype.hasOwnProperty.call(assignment,&#x27;workMinutes&#x27;)&amp;&amp;validWorkMinutes(assignment.workMinutes))restored.workMinutes=assignment.workMinutes;
+          if(validClock(assignment.workFrom)&amp;&amp;validClock(assignment.workTo)){restored.workFrom=assignment.workFrom;restored.workTo=assignment.workTo;}
+          restoredPeople.push(restored);seen.add(person.id);
+        }
+        const restored=base?{...base}:{id,customer:saved.customer.slice(0,100),task:&#x27;Freier Auftrag&#x27;,place:&#x27;&#x27;,start:Number.isFinite(saved.start)?saved.start:null,end:Number.isFinite(saved.end)?saved.end:null,roles:[],types:[],vehicles:[],remark:&#x27;&#x27;,free:true};
+        if(validClock(saved.workFrom)&amp;&amp;validClock(saved.workTo)){restored.workFrom=saved.workFrom;restored.workTo=saved.workTo;}
+        restored.people=restoredPeople;restored.workDurationMinutes=saved.workDurationMinutes??null;
+        if(Array.isArray(saved.vehicles))restored.vehicles=[...new Set(saved.vehicles.filter(id=&gt;vehicles.some(v=&gt;v.id===id)))];
+        if(base)list[index]=restored;else list.push(restored);
+        if(restored.free)freeSequence=Math.max(freeSequence,Number(id.slice(2))||0);
+        clean[record.day+&#x27;|&#x27;+id]={day:record.day,order:JSON.parse(JSON.stringify(restored))};
+      }
+      return clean;
+    }
+    const workingOrders=loadWorkingOrders();
+    let lastWorkingOrders=JSON.stringify(workingOrders),workingSavePromise=Promise.resolve(true);
+    function syncWorkingOrders(){
+      for(const [day,list] of Object.entries(dayOrders))for(const o of list){
+        if(o.workDurationMinutes!=null)for(const p of o.people)if(!Object.prototype.hasOwnProperty.call(p,&#x27;workMinutes&#x27;)){p.workMinutes=o.workDurationMinutes;if(validClock(o.workFrom)&amp;&amp;validClock(o.workTo)){p.workFrom=o.workFrom;p.workTo=o.workTo;}}
+        const key=day+&#x27;|&#x27;+o.id;
+        if(workingOrders[key]||o.workDurationMinutes!=null||o.people.some(p=&gt;Object.prototype.hasOwnProperty.call(p,&#x27;workMinutes&#x27;)))workingOrders[key]={day,order:JSON.parse(JSON.stringify(o))};
+      }
+      const serialized=JSON.stringify(workingOrders);if(serialized===lastWorkingOrders)return workingSavePromise;
+      lastWorkingOrders=serialized;
+      workingSavePromise=persistPrivateFields({haberlingWorkingOrdersV1:workingOrders});
+      void workingSavePromise.then(saved=&gt;{
+        if(!saved)$(&#x27;#hb-notice&#x27;).textContent+=&#x27; Arbeitszeiten können in diesem Browser nicht dauerhaft gespeichert werden.&#x27;;
+      });
+      return workingSavePromise;
+    }
+    function parseWorkHours(value){
+      const text=String(value).trim();if(!text)return {valid:true,minutes:null};
+      let minutes;
+      if(/^\d{1,2}:\d{2}$/.test(text)){
+        const [h,m]=text.split(&#x27;:&#x27;).map(Number);if(m&gt;=60)return {valid:false};minutes=h*60+m;
+      }else if(/^\d{1,2}(?:[.,]\d{1,2})?$/.test(text))minutes=Math.round(Number(text.replace(&#x27;,&#x27;,&#x27;.&#x27;))*60);
+      else return {valid:false};
+      return {valid:Number.isInteger(minutes)&amp;&amp;minutes&gt;=0&amp;&amp;minutes&lt;=1440,minutes};
+    }
+    const hoursText=minutes=&gt;minutes==null?&#x27;&#x27;:new Intl.NumberFormat(&#x27;de-DE&#x27;,{maximumFractionDigits:2}).format(minutes/60);
+    function validClock(v){return typeof v===&#x27;string&#x27;&amp;&amp;/^([01]\d|2[0-3]):[0-5]\d$/.test(v);}
+    function clockMinutes(v){const [h,m]=v.split(&#x27;:&#x27;).map(Number);return h*60+m;}
+    function readWorkRange(from,to){
+      if(!from&amp;&amp;!to)return {valid:true,minutes:null,from:&#x27;&#x27;,to:&#x27;&#x27;};
+      if(!validClock(from)||!validClock(to))return {valid:false};
+      return {valid:true,from,to,minutes:(clockMinutes(to)-clockMinutes(from)+1440)%1440};
+    }
+    function rangeSummary(from,to,legacy=null){
+      const r=readWorkRange(from,to);if(!r.valid)return &#x27;Bitte Von und Bis eingeben&#x27;;
+      if(r.minutes===null)return legacy==null?&#x27;Dauer: –&#x27;:&#x27;Bisherige Dauer: &#x27;+hoursText(legacy)+&#x27; h · Uhrzeiten ergänzen&#x27;;
+      return &#x27;Dauer: &#x27;+Math.floor(r.minutes/60)+&#x27; Std. &#x27;+String(r.minutes%60).padStart(2,&#x27;0&#x27;)+&#x27; Min.&#x27;+(clockMinutes(to)&lt;clockMinutes(from)?&#x27; · bis Folgetag&#x27;:&#x27;&#x27;);
+    }
+    function workingTimeHTML(o){
+      const row=p=&gt;{
+        const person=people.find(r=&gt;r.id===p.id);
+        return &#x27;&lt;div class=&quot;hb-work-row&quot; data-drop-order=&quot;&#x27;+o.id+&#x27;&quot;&gt;&lt;div class=&quot;hb-work-person&quot;&gt;&#x27;+chip(person.name,p.id,&#x27;people&#x27;)+&#x27;&lt;span class=&quot;hb-resource-meta&quot;&gt;&#x27;+escapeHTML(p.role)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-work-input&quot;&gt;&#x27;+[&#x27;from&#x27;,&#x27;to&#x27;].map(field=&gt;&#x27;&lt;input type=&quot;time&quot; class=&quot;hb-person-hours&quot; data-work-person=&quot;&#x27;+p.id+&#x27;&quot; data-work-order=&quot;&#x27;+o.id+&#x27;&quot; data-work-day=&quot;&#x27;+activeDay+&#x27;&quot; data-clock=&quot;&#x27;+field+&#x27;&quot; value=&quot;&#x27;+(field===&#x27;from&#x27;?p.workFrom||&#x27;&#x27;:p.workTo||&#x27;&#x27;)+&#x27;&quot; aria-label=&quot;&#x27;+(field===&#x27;from&#x27;?&#x27;Von&#x27;:&#x27;Bis&#x27;)+&#x27; für &#x27;+escapeHTML(person.name)+&#x27;&quot;&gt;&#x27;).join(&#x27;&#x27;)+&#x27;&lt;button type=&quot;button&quot; class=&quot;hb-work-save&quot; data-save-work-person=&quot;&#x27;+p.id+&#x27;&quot; aria-label=&quot;Arbeitszeit für &#x27;+escapeHTML(person.name)+&#x27; speichern&quot; title=&quot;Arbeitszeit speichern&quot;&gt;✓&lt;/button&gt;&lt;output class=&quot;hb-clock-total&quot;&gt;&#x27;+rangeSummary(p.workFrom||&#x27;&#x27;,p.workTo||&#x27;&#x27;,p.workMinutes??null)+&#x27;&lt;/output&gt;&lt;/div&gt;&lt;/div&gt;&#x27;;
+      };
+      const group=(label,list)=&gt;&#x27;&lt;div class=&quot;hb-work-group&quot;&gt;&lt;h4&gt;&#x27;+label+&#x27;&lt;/h4&gt;&lt;div class=&quot;hb-work-column-head&quot;&gt;&lt;span&gt;Name&lt;/span&gt;&lt;span&gt;Von · Bis&lt;/span&gt;&lt;/div&gt;&#x27;+(list.length?list.map(row).join(&#x27;&#x27;):&#x27;&lt;p class=&quot;hb-work-empty&quot;&gt;Noch niemand zugeordnet.&lt;/p&gt;&#x27;)+&#x27;&lt;/div&gt;&#x27;;
+      return &#x27;&lt;section class=&quot;hb-work-section&quot; aria-labelledby=&quot;hb-work-title&quot;&gt;&lt;h4 id=&quot;hb-work-title&quot;&gt;Arbeitszeiten&lt;/h4&gt;&lt;span class=&quot;hb-work-duration-label&quot;&gt;Einsatzzeit für den gesamten Auftrag&lt;/span&gt;&lt;div class=&quot;hb-work-duration&quot;&gt;&lt;label&gt;Von&lt;input type=&quot;time&quot; id=&quot;hb-order-work-from&quot; data-order-clock=&quot;from&quot; value=&quot;&#x27;+(o.workFrom||&#x27;&#x27;)+&#x27;&quot;&gt;&lt;/label&gt;&lt;label&gt;Bis&lt;input type=&quot;time&quot; id=&quot;hb-order-work-to&quot; data-order-clock=&quot;to&quot; value=&quot;&#x27;+(o.workTo||&#x27;&#x27;)+&#x27;&quot;&gt;&lt;/label&gt;&lt;output class=&quot;hb-clock-total&quot;&gt;&#x27;+rangeSummary(o.workFrom||&#x27;&#x27;,o.workTo||&#x27;&#x27;,o.workDurationMinutes??null)+&#x27;&lt;/output&gt;&lt;button type=&quot;button&quot; class=&quot;hb-create-button&quot; data-apply-work-duration=&quot;&#x27;+o.id+&#x27;&quot;&gt;Auf alle übertragen&lt;/button&gt;&lt;/div&gt;&lt;p id=&quot;hb-work-note&quot; class=&quot;hb-work-note&quot;&gt;Übernimmt Von und Bis für alle Personen. Einzelzeiten mit ✓ oder Enter speichern. Liegt Bis vor Von, gilt der Folgetag.&lt;/p&gt;&lt;div id=&quot;hb-work-error&quot; class=&quot;hb-form-error&quot; role=&quot;alert&quot;&gt;&lt;/div&gt;&#x27;+group(&#x27;Stammpersonal&#x27;,staffPeople(o))+group(&#x27;Zeitarbeiter&#x27;,agencyPeople(o))+&#x27;&lt;/section&gt;&#x27;;
+    }
+    function personClockInputs(input){return [...root.querySelectorAll(&#x27;.hb-person-hours&#x27;)].filter(x=&gt;x.dataset.workPerson===input.dataset.workPerson&amp;&amp;x.dataset.workOrder===input.dataset.workOrder);}
+    function updateWorkPreview(input){
+      const container=input.closest(input.dataset.orderClock?&#x27;.hb-work-duration&#x27;:&#x27;.hb-work-input&#x27;);if(!container)return;
+      const inputs=container.querySelectorAll(&#x27;input&#x27;);container.querySelector(&#x27;output&#x27;).textContent=rangeSummary(inputs[0].value,inputs[1].value);
+    }
+    async function applyOrderDuration(id){
+      const o=orders.find(x=&gt;x.id===id);if(!o)return;
+      const parsed=readWorkRange($(&#x27;#hb-order-work-from&#x27;).value,$(&#x27;#hb-order-work-to&#x27;).value);
+      if(!parsed.valid||parsed.minutes===null){$(&#x27;#hb-work-error&#x27;).textContent=&#x27;Bitte Von und Bis als Uhrzeit eingeben.&#x27;;return;}
+      o.workFrom=parsed.from;o.workTo=parsed.to;o.workDurationMinutes=parsed.minutes;
+      for(const p of o.people){p.workFrom=parsed.from;p.workTo=parsed.to;p.workMinutes=parsed.minutes;}
+      render();$(&#x27;#hb-notice&#x27;).textContent=&#x27;Arbeitszeiten werden gespeichert …&#x27;;
+      if(await workingSavePromise)$(&#x27;#hb-notice&#x27;).textContent=parsed.from+&#x27;–&#x27;+parsed.to+&#x27; Uhr auf &#x27;+o.people.length+&#x27; Person(en) übertragen.&#x27;;
+    }
+    async function savePersonWorkHours(input){
+      if(input.dataset.workDay!==activeDay)return;
+      const o=orders.find(x=&gt;x.id===input.dataset.workOrder),person=o?.people.find(p=&gt;p.id===input.dataset.workPerson);if(!person)return;
+      const inputs=personClockInputs(input),from=inputs.find(x=&gt;x.dataset.clock===&#x27;from&#x27;),to=inputs.find(x=&gt;x.dataset.clock===&#x27;to&#x27;);if(!from||!to)return;
+      const parsed=readWorkRange(from.value,to.value);
+      if(!parsed.valid){$(&#x27;#hb-work-error&#x27;).textContent=&#x27;Bitte beide Uhrzeiten eingeben oder beide Felder leeren.&#x27;;return;}
+      person.workFrom=parsed.from;person.workTo=parsed.to;person.workMinutes=parsed.minutes;
+      $(&#x27;#hb-work-error&#x27;).textContent=&#x27;&#x27;;updateWorkPreview(input);const saving=syncWorkingOrders();
+      $(&#x27;#hb-notice&#x27;).textContent=&#x27;Arbeitszeit wird gespeichert …&#x27;;if(!await saving)return;
+      $(&#x27;#hb-notice&#x27;).textContent=people.find(p=&gt;p.id===person.id).name+&#x27;: &#x27;+(parsed.minutes===null?&#x27;Arbeitszeit entfernt.&#x27;:parsed.from+&#x27;–&#x27;+parsed.to+&#x27; Uhr gespeichert.&#x27;);
+    }
+
     function activeResourceStatus(k,id,day=activeDay){const status=resourceStatuses[k]?.[id];return status&amp;&amp;(status.reason===&#x27;Defekt&#x27;||status.start&lt;=day&amp;&amp;day&lt;=status.end)?status:null;}
     const statusDate=value=&gt;value.split(&#x27;-&#x27;).reverse().join(&#x27;.&#x27;);
     const statusText=status=&gt;status.reason===&#x27;Defekt&#x27;?&#x27;Defekt · bis zur Freigabe&#x27;:status.reason+&#x27; · &#x27;+statusDate(status.start)+&#x27; – &#x27;+statusDate(status.end);
-    async function persistResourceStatuses(){
-      const snapshot=JSON.parse(JSON.stringify(resourceStatuses));
-      try{
-        if(globalThis.openai?.setWidgetState&amp;&amp;globalThis.openai.statePersistence!==&#x27;none&#x27;){
-          const previous=globalThis.openai.widgetState||{};
-          await globalThis.openai.setWidgetState({...previous,privateContent:{...(previous.privateContent||{}),haberlingResourceStatuses:snapshot,haberlingTemporaryWorkers:people.filter(p=&gt;p.temporary)}});return true;
-        }
-      }catch{}
-      try{if(globalThis.localStorage){globalThis.localStorage.setItem(&#x27;haberling-dispo-resource-status-v1&#x27;,JSON.stringify(snapshot));globalThis.localStorage.setItem(&#x27;haberling-dispo-temporary-workers-v1&#x27;,JSON.stringify(people.filter(p=&gt;p.temporary)));return true;}}catch{}
-      return false;
-    }
+    async function persistResourceStatuses(){return persistPrivateFields({haberlingResourceStatuses:resourceStatuses,haberlingTemporaryWorkers:people.filter(p=&gt;p.temporary)});}
     function syncStatusFields(){
       const indefinite=$(&#x27;#hb-status-reason&#x27;).value===&#x27;Defekt&#x27;,enabled=$(&#x27;#hb-status-active&#x27;).checked;
       $(&#x27;#hb-status-dates&#x27;).hidden=indefinite;$(&#x27;#hb-status-duration&#x27;).hidden=!indefinite;
@@ -2314,23 +2474,26 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       $(&#x27;#hb-notice&#x27;).textContent=source?resource.name+&#x27; von &#x27;+source.id+&#x27; nach &#x27;+target.id+&#x27; verschoben.&#x27;:resource.name+(existing?&#x27; ist dem Auftrag &#x27;+target.id+&#x27; bereits zugeordnet.&#x27;:&#x27; dem Auftrag &#x27;+target.id+&#x27; zugeordnet.&#x27;);
       return true;
     }
-    function resourceSlots(o,k,details=false){
+    function resourceSlots(o,k,details=false,group=null){
       const isPeople=k===&#x27;people&#x27;,requirements=isPeople?o.roles:o.types;
       const assigned=isPeople?o.people:o.vehicles;
       const token=value=&gt;isPeople?(details?chip(people.find(p=&gt;p.id===value.id).name,value.id,k):personToken(value.id,o.id)):(details?chip(vehicles.find(v=&gt;v.id===value).name,value,k):vehicleToken(value,o.id));
+      const inGroup=value=&gt;!isPeople||!group||(group===&#x27;agency&#x27;?temporaryPerson(value.id):!temporaryPerson(value.id));
       const matches=(value,type)=&gt;isPeople?value.role===type:vehicles.find(v=&gt;v.id===value)?.type===type;
       const included=new Set();
       let html=requirements.map(req=&gt;{
         const matching=assigned.filter(value=&gt;matches(value,req.type));
         return Array.from({length:req.count},(_,i)=&gt;{
           const value=matching[i];if(value)included.add(isPeople?value.id:value);
+          if(value&amp;&amp;!inGroup(value)||!value&amp;&amp;group===&#x27;agency&#x27;)return &#x27;&#x27;;
           const label=escapeHTML(req.type);
           return &#x27;&lt;div class=&quot;hb-capacity-slot &#x27;+(value?&#x27;hb-slot-filled&#x27;:&#x27;hb-slot-open&#x27;)+&#x27;&quot; data-drop-order=&quot;&#x27;+o.id+&#x27;&quot; data-drop-kind=&quot;&#x27;+k+&#x27;&quot; &#x27;+(isPeople?&#x27;data-drop-role&#x27;:&#x27;data-drop-type&#x27;)+&#x27;=&quot;&#x27;+label+&#x27;&quot; aria-label=&quot;&#x27;+label+&#x27; &#x27;+(i+1)+&#x27; von &#x27;+req.count+(value?&#x27; besetzt&#x27;:&#x27; offen&#x27;)+&#x27;&quot;&gt;&lt;span class=&quot;hb-capacity-label&quot;&gt;&#x27;+label+&#x27;&lt;span class=&quot;hb-slot-index&quot;&gt;&#x27;+(i+1)+&#x27; / &#x27;+req.count+&#x27;&lt;/span&gt;&lt;/span&gt;&#x27;+(value?token(value):&#x27;&lt;span class=&quot;hb-slot-prompt&quot;&gt;Platz frei&lt;/span&gt;&#x27;)+&#x27;&lt;/div&gt;&#x27;;
         }).join(&#x27;&#x27;);
       }).join(&#x27;&#x27;);
-      const extras=assigned.filter(value=&gt;!included.has(isPeople?value.id:value));
+      const extras=assigned.filter(value=&gt;inGroup(value)&amp;&amp;!included.has(isPeople?value.id:value));
       if(extras.length)html+=&#x27;&lt;div class=&quot;hb-extra-resources&quot;&gt;&lt;span class=&quot;hb-capacity-label&quot;&gt;&#x27;+(o.free?&#x27;Zugeordnet&#x27;:&#x27;Zusätzlich gebucht&#x27;)+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+extras.map(token).join(&#x27;&#x27;)+&#x27;&lt;/div&gt;&lt;/div&gt;&#x27;;
-      return html+&#x27;&lt;div class=&quot;hb-capacity-extra&quot; data-drop-order=&quot;&#x27;+o.id+&#x27;&quot; data-drop-kind=&quot;&#x27;+k+&#x27;&quot;&gt;+ &#x27;+(isPeople?&#x27;Personal zusätzlich möglich&#x27;:&#x27;Fahrzeug zusätzlich möglich&#x27;)+&#x27;&lt;/div&gt;&#x27;;
+      if(group===&#x27;agency&#x27;&amp;&amp;!agencyPeople(o).length)html=&#x27;&lt;div class=&quot;hb-agency-empty&quot;&gt;Noch keine Zeitarbeiter&lt;/div&gt;&#x27;;
+      return html+&#x27;&lt;div class=&quot;hb-capacity-extra&quot; data-drop-order=&quot;&#x27;+o.id+&#x27;&quot; data-drop-kind=&quot;&#x27;+k+&#x27;&quot;&gt;+ &#x27;+(group===&#x27;agency&#x27;?&#x27;Zeitarbeiter hinzufügen&#x27;:isPeople?&#x27;Personal zusätzlich möglich&#x27;:&#x27;Fahrzeug zusätzlich möglich&#x27;)+&#x27;&lt;/div&gt;&#x27;;
     }
 
     let detailsVisible=globalThis.matchMedia?globalThis.matchMedia(&#x27;(min-width: 1600px)&#x27;).matches:true;
@@ -2343,6 +2506,7 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       $(&#x27;#hb-details-toggle&#x27;).setAttribute(&#x27;aria-pressed&#x27;,String(detailsVisible));
     }
     function render(){
+      syncWorkingOrders();
       syncLayout();
       $(&#x27;#hb-day-summary&#x27;).innerHTML=&#x27;&lt;span&gt;&lt;strong&gt;&#x27;+orders.length+&#x27;&lt;/strong&gt; Aufträge&lt;/span&gt;&lt;span&gt;&lt;strong&gt;&#x27;+orders.filter(o=&gt;!complete(o)&amp;&amp;!overbooked(o)).length+&#x27;&lt;/strong&gt; zu besetzen&lt;/span&gt;&lt;span&gt;&lt;strong&gt;&#x27;+orders.filter(o=&gt;complete(o)&amp;&amp;!overbooked(o)).length+&#x27;&lt;/strong&gt; vollständig&lt;/span&gt;&lt;span class=&quot;hb-summary-over&quot;&gt;&lt;strong&gt;&#x27;+orders.filter(overbooked).length+&#x27;&lt;/strong&gt; überbucht&lt;/span&gt;&#x27;;
       const o=orders.find(x=&gt;x.id===selected);
@@ -2351,9 +2515,12 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       $(&#x27;#hb-period&#x27;).textContent=o?o.customer+&#x27; · &#x27;+windowText(o):&#x27;Noch kein Auftrag ausgewählt&#x27;;
       root.querySelectorAll(&#x27;[data-kind]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-selected&#x27;,String(b.dataset.kind===kind)));
       root.querySelectorAll(&#x27;[data-filter]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b.dataset.filter===filter)));
-      $(&#x27;#hb-order-rows&#x27;).innerHTML=orders.filter(x=&gt;filter===&#x27;all&#x27;||!complete(x)).map(x=&gt;&#x27;&lt;tr tabindex=&quot;0&quot; aria-selected=&quot;&#x27;+(x.id===selected)+&#x27;&quot; data-drop-order=&quot;&#x27;+x.id+&#x27;&quot; class=&quot;&#x27;+(x.id===selected?&#x27;hb-selected&#x27;:&#x27;&#x27;)+&#x27;&quot;&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;hb-order-pick&quot; data-order=&quot;&#x27;+x.id+&#x27;&quot; aria-pressed=&quot;&#x27;+(x.id===selected)+&#x27;&quot;&gt;&lt;span class=&quot;hb-pos&quot;&gt;&#x27;+x.id+&#x27;&lt;/span&gt;&#x27;+escapeHTML(x.customer)+&#x27;&lt;/button&gt;&lt;span class=&quot;hb-sub&quot;&gt;&#x27;+windowText(x)+&#x27;&lt;/span&gt;&lt;span class=&quot;hb-order-task&quot;&gt;&#x27;+escapeHTML(x.task)+&#x27;&lt;/span&gt;&lt;span class=&quot;hb-order-address&quot;&gt;&#x27;+escapeHTML(x.loading||&#x27;&#x27;)+(x.unloading?&#x27; → &#x27;+escapeHTML(x.unloading):x.loading?&#x27; · nur vor Ort&#x27;:&#x27;&#x27;)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;hb-drop-person&quot;&gt;&lt;span class=&quot;hb-number &#x27;+(x.free?&#x27;&#x27;:x.people.length&gt;pNeed(x)?&#x27;hb-over-count&#x27;:personnelCovered(x)?&#x27;hb-ok&#x27;:&#x27;hb-need&#x27;)+&#x27;&quot;&gt;&#x27;+x.people.length+(x.free?&#x27; zugeordnet&#x27;:&#x27; / &#x27;+pNeed(x))+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+resourceSlots(x,&#x27;people&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;hb-number &#x27;+(x.free?&#x27;&#x27;:x.vehicles.length&gt;vNeed(x)?&#x27;hb-over-count&#x27;:vehiclesCovered(x)?&#x27;hb-ok&#x27;:&#x27;hb-need&#x27;)+&#x27;&quot;&gt;&#x27;+x.vehicles.length+(x.free?&#x27; zugeordnet&#x27;:&#x27; / &#x27;+vNeed(x))+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+resourceSlots(x,&#x27;vehicles&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;hb-status &#x27;+statusClass(x)+&#x27;&quot;&gt;&#x27;+orderStatus(x)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&#x27;).join(&#x27;&#x27;)||&#x27;&lt;tr&gt;&lt;td colspan=&quot;4&quot;&gt;&#x27;+(orders.length?&#x27;Alle Aufträge sind vollständig besetzt.&#x27;:&#x27;Keine Aufträge für diesen Tag.&#x27;)+&#x27;&lt;/td&gt;&lt;/tr&gt;&#x27;;
+      $(&#x27;#hb-order-rows&#x27;).innerHTML=orders.filter(x=&gt;filter===&#x27;all&#x27;||!complete(x)).map(x=&gt;{
+        const staffCount=staffPeople(x).length,agencyCount=agencyPeople(x).length;
+        return &#x27;&lt;tr tabindex=&quot;0&quot; aria-selected=&quot;&#x27;+(x.id===selected)+&#x27;&quot; data-drop-order=&quot;&#x27;+x.id+&#x27;&quot; class=&quot;&#x27;+(x.id===selected?&#x27;hb-selected&#x27;:&#x27;&#x27;)+&#x27;&quot;&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;hb-order-pick&quot; data-order=&quot;&#x27;+x.id+&#x27;&quot; aria-pressed=&quot;&#x27;+(x.id===selected)+&#x27;&quot;&gt;&lt;span class=&quot;hb-pos&quot;&gt;&#x27;+x.id+&#x27;&lt;/span&gt;&#x27;+escapeHTML(x.customer)+&#x27;&lt;/button&gt;&lt;span class=&quot;hb-sub&quot;&gt;&#x27;+windowText(x)+&#x27;&lt;/span&gt;&lt;span class=&quot;hb-order-task&quot;&gt;&#x27;+escapeHTML(x.task)+&#x27;&lt;/span&gt;&lt;span class=&quot;hb-order-address&quot;&gt;&#x27;+escapeHTML(x.loading||&#x27;&#x27;)+(x.unloading?&#x27; → &#x27;+escapeHTML(x.unloading):x.loading?&#x27; · nur vor Ort&#x27;:&#x27;&#x27;)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;hb-order-vehicles&quot;&gt;&lt;span class=&quot;hb-number &#x27;+(x.free?&#x27;&#x27;:x.vehicles.length&gt;vNeed(x)?&#x27;hb-over-count&#x27;:vehiclesCovered(x)?&#x27;hb-ok&#x27;:&#x27;hb-need&#x27;)+&#x27;&quot;&gt;&#x27;+x.vehicles.length+(x.free?&#x27; zugeordnet&#x27;:&#x27; / &#x27;+vNeed(x))+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+resourceSlots(x,&#x27;vehicles&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;hb-order-staff&quot;&gt;&lt;span class=&quot;hb-number&quot;&gt;&#x27;+staffCount+&#x27; zugeordnet&lt;/span&gt;&lt;span class=&quot;hb-total-personnel &#x27;+(x.free?&#x27;&#x27;:x.people.length&gt;pNeed(x)?&#x27;hb-over-count&#x27;:personnelCovered(x)?&#x27;hb-ok&#x27;:&#x27;hb-need&#x27;)+&#x27;&quot;&gt;&#x27;+x.people.length+(x.free?&#x27; Personal gesamt&#x27;:&#x27; / &#x27;+pNeed(x)+&#x27; Personal gesamt&#x27;)+&#x27;&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+resourceSlots(x,&#x27;people&#x27;,false,&#x27;staff&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td class=&quot;hb-order-agency&quot;&gt;&lt;span class=&quot;hb-number&quot;&gt;&#x27;+agencyCount+&#x27; zugeordnet&lt;/span&gt;&lt;div class=&quot;hb-chips&quot;&gt;&#x27;+resourceSlots(x,&#x27;people&#x27;,false,&#x27;agency&#x27;)+&#x27;&lt;/div&gt;&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;hb-status &#x27;+statusClass(x)+&#x27;&quot;&gt;&#x27;+orderStatus(x)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&#x27;;
+      }).join(&#x27;&#x27;)||&#x27;&lt;tr&gt;&lt;td colspan=&quot;5&quot;&gt;&#x27;+(orders.length?&#x27;Alle Aufträge sind vollständig besetzt.&#x27;:&#x27;Keine Aufträge für diesen Tag.&#x27;)+&#x27;&lt;/td&gt;&lt;/tr&gt;&#x27;;
       if(!o){$(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-day-empty&quot;&gt;Über „Freien Auftrag hinzufügen“ einen Auftrag für diesen Tag anlegen.&lt;/div&gt;&#x27;;renderResources(null);return;}
-      $(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-detail-head&quot;&gt;&lt;div class=&quot;hb-detail-title&quot;&gt;&#x27;+o.id+&#x27; · &#x27;+escapeHTML(o.customer)+&#x27;&lt;span class=&quot;hb-sub&quot;&gt;&#x27;+escapeHTML(o.task)+&#x27; · &#x27;+escapeHTML(o.place)+&#x27; · &#x27;+windowText(o)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;hb-status &#x27;+statusClass(o)+&#x27;&quot;&gt;&#x27;+(o.free?&#x27;Freier Auftrag&#x27;:overbooked(o)?&#x27;Überbucht&#x27;:complete(o)?&#x27;Vollständig besetzt&#x27;:&#x27;Zuordnung ergänzen&#x27;)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-detail-body&quot;&gt;&#x27;+locationsHTML(o)+&#x27;&lt;div class=&quot;hb-section-title&quot;&gt;Personalbedarf&lt;/div&gt;&lt;div class=&quot;hb-capacity-grid&quot;&gt;&#x27;+resourceSlots(o,&#x27;people&#x27;,true)+&#x27;&lt;/div&gt;&lt;div class=&quot;hb-section-title hb-divider&quot;&gt;Fahrzeug- und Gerätebedarf&lt;/div&gt;&lt;div class=&quot;hb-capacity-grid&quot;&gt;&#x27;+resourceSlots(o,&#x27;vehicles&#x27;,true)+&#x27;&lt;/div&gt;&#x27;+(o.remark?&#x27;&lt;div class=&quot;hb-remark&quot;&gt;Bemerkung: &#x27;+escapeHTML(o.remark)+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;
+      $(&#x27;#hb-detail&#x27;).innerHTML=&#x27;&lt;div class=&quot;hb-detail-head&quot;&gt;&lt;div class=&quot;hb-detail-title&quot;&gt;&#x27;+o.id+&#x27; · &#x27;+escapeHTML(o.customer)+&#x27;&lt;span class=&quot;hb-sub&quot;&gt;&#x27;+escapeHTML(o.task)+&#x27; · &#x27;+escapeHTML(o.place)+&#x27; · &#x27;+windowText(o)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;hb-status &#x27;+statusClass(o)+&#x27;&quot;&gt;&#x27;+(o.free?&#x27;Freier Auftrag&#x27;:overbooked(o)?&#x27;Überbucht&#x27;:complete(o)?&#x27;Vollständig besetzt&#x27;:&#x27;Zuordnung ergänzen&#x27;)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hb-detail-body&quot;&gt;&#x27;+locationsHTML(o)+workingTimeHTML(o)+&#x27;&lt;div class=&quot;hb-section-title hb-divider&quot;&gt;Personalbedarf&lt;/div&gt;&lt;p class=&quot;hb-person-demand&quot;&gt;&#x27;+(o.roles.map(r=&gt;r.count+&#x27; × &#x27;+escapeHTML(r.type)).join(&#x27; · &#x27;)||&#x27;Kein fester Bedarf&#x27;)+&#x27;&lt;/p&gt;&lt;div class=&quot;hb-section-title hb-divider&quot;&gt;Fahrzeug- und Gerätebedarf&lt;/div&gt;&lt;div class=&quot;hb-capacity-grid&quot;&gt;&#x27;+resourceSlots(o,&#x27;vehicles&#x27;,true)+&#x27;&lt;/div&gt;&#x27;+(o.remark?&#x27;&lt;div class=&quot;hb-remark&quot;&gt;Bemerkung: &#x27;+escapeHTML(o.remark)+&#x27;&lt;/div&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/div&gt;&#x27;;
       renderResources(o);
     }
     const resourceSearch={people:&#x27;&#x27;,vehicles:&#x27;&#x27;};
@@ -2411,7 +2578,8 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       if(e.target.id!==&#x27;hb-resource-search&#x27;)return;
       resourceSearch[kind]=e.target.value;renderResources(orders.find(o=&gt;o.id===selected));
     });
-    root.addEventListener(&#x27;change&#x27;,e=&gt;{ // search event also covers the clear button of search inputs
+    root.addEventListener(&#x27;change&#x27;,e=&gt;{
+      if(e.target.dataset?.workPerson||e.target.dataset?.orderClock){updateWorkPreview(e.target);return;} // search event also covers the clear button of search inputs
       if(e.target.id===&#x27;hb-resource-search&#x27;){resourceSearch[kind]=e.target.value;renderResources(orders.find(o=&gt;o.id===selected));return;}
       if(e.target.id===&#x27;hb-day&#x27;){if(e.target.value)changeDay(e.target.value);else render();}
       else if([&#x27;hb-status-reason&#x27;,&#x27;hb-status-from&#x27;,&#x27;hb-status-to&#x27;,&#x27;hb-status-active&#x27;].includes(e.target.id)){
@@ -2473,9 +2641,12 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       e.preventDefault();if(!moveResource(row.dataset.dropOrder))clearMove();
     });
     root.addEventListener(&#x27;dragend&#x27;,()=&gt;{clearMove();});
-    root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if((e.key===&#x27;Enter&#x27;||e.key===&#x27; &#x27;)&amp;&amp;e.target.matches?.(&#x27;tr[data-drop-order]&#x27;)){e.preventDefault();selected=e.target.dataset.dropOrder;render();return;}if(e.key===&#x27;Escape&#x27;&amp;&amp;moving){clearMove();$(&#x27;#hb-notice&#x27;).textContent=&#x27;Verschieben abgebrochen.&#x27;;}});
+    root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Enter&#x27;&amp;&amp;e.target.dataset?.workPerson){e.preventDefault();savePersonWorkHours(e.target);return;}if(e.key===&#x27;Enter&#x27;&amp;&amp;e.target.dataset?.orderClock){e.preventDefault();applyOrderDuration(selected);return;}if((e.key===&#x27;Enter&#x27;||e.key===&#x27; &#x27;)&amp;&amp;e.target.matches?.(&#x27;tr[data-drop-order]&#x27;)){e.preventDefault();selected=e.target.dataset.dropOrder;render();return;}if(e.key===&#x27;Escape&#x27;&amp;&amp;moving){clearMove();$(&#x27;#hb-notice&#x27;).textContent=&#x27;Verschieben abgebrochen.&#x27;;}});
     root.addEventListener(&#x27;click&#x27;,e=&gt;{
       const action=e.target.closest(&#x27;button&#x27;);
+      if(!action&amp;&amp;e.target.closest(&#x27;input, select, textarea&#x27;))return;
+      if(action?.dataset.saveWorkPerson){const input=root.querySelector(&#x27;.hb-person-hours[data-work-person=&quot;&#x27;+action.dataset.saveWorkPerson+&#x27;&quot;]&#x27;);if(input)savePersonWorkHours(input);return;}
+      if(action?.dataset.applyWorkDuration){applyOrderDuration(action.dataset.applyWorkDuration);return;}
       if(action?.dataset.toggleNav){navigationCollapsed=!navigationCollapsed;syncLayout();return;}
       if(action?.dataset.toggleDetails){detailsVisible=!detailsVisible;syncLayout();return;}
       if(action?.dataset.toggleBooked){hideBookedResources=!hideBookedResources;clearMove();renderResources(orders.find(o=&gt;o.id===selected));return;}
@@ -2504,10 +2675,10 @@ html,body{height:100%;height:100dvh;margin:0!important;padding:0!important;overf
       const b=e.target.closest(&#x27;button&#x27;);
       if(!b){
         const row=dropOrderElement(e.target);
-        if(row){selected=row.dataset.dropOrder;$(&#x27;#hb-notice&#x27;).textContent=&#x27;&#x27;;render();}
+        if(row){selected=row.dataset.dropOrder;detailsVisible=true;$(&#x27;#hb-notice&#x27;).textContent=&#x27;&#x27;;render();}
         return;
       }
-      if(b.dataset.order){selected=b.dataset.order;$(&#x27;#hb-notice&#x27;).textContent=&#x27;&#x27;;render();return;}
+      if(b.dataset.order){selected=b.dataset.order;detailsVisible=true;$(&#x27;#hb-notice&#x27;).textContent=&#x27;&#x27;;render();return;}
       if(b.dataset.kind){kind=b.dataset.kind;render();return;}
       if(b.dataset.filter){filter=b.dataset.filter;render();return;}
       const o=orders.find(x=&gt;x.id===selected);
